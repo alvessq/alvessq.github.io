@@ -1,0 +1,15 @@
+{
+  "name": "alvessq.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfólio de Kevin Alves Quirino: site estático publicado no GitHub Pages.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "cases": "node scripts/gerar-cases.mjs",
+    "verificar": "node scripts/gerar-cases.mjs --check && node scripts/verificar-links.mjs",
+    "servir": "npx --yes http-server@14.1.1 -p 8080 -c-1 ."
+  }
+}

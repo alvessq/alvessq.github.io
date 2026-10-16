@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kevin Quirino · Qualidade e Produto</title>
+<meta name="description" content="Kevin Alves Quirino, analista de qualidade (QA) com visão de produto. Projetos reais de automação de testes em apps e sites, explicados passo a passo.">
+<meta name="author" content="Kevin Alves Quirino">
+<link rel="canonical" href="https://alvessq.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://alvessq.github.io/">
+<meta property="og:title" content="Kevin Quirino · Qualidade e Produto">
+<meta property="og:description" content="Qualidade que começa na regra de negócio, não no bug. Projetos reais de automação de testes, explicados passo a passo.">
+<meta property="og:image" content="https://alvessq.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0D12">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+<script>try { if (localStorage.getItem('tema') === 'light') document.documentElement.dataset.theme = 'light'; } catch (e) {}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Kevin Alves Quirino","jobTitle":"Analista de Qualidade (QA)","address":{"@type":"PostalAddress","addressLocality":"São Bernardo do Campo","addressRegion":"SP","addressCountry":"BR"},"url":"https://alvessq.github.io/","sameAs":["https://www.linkedin.com/in/kevin-alves-quirino-0942091b9/","https://github.com/alvessq"]}
+</script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Kevin Quirino</a>
+    <nav class="links" aria-label="Seções">
+      <a href="#cases">Projetos</a>
+      <a href="#processo">Como trabalho</a>
+      <a href="#competencias">Ferramentas</a>
+      <a href="#trajetoria">Trajetória</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button class="small-btn" id="theme-btn" type="button" aria-pressed="false">Tema claro</button>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section class="hero" id="inicio">
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <p class="open">Aberto a oportunidades em Qualidade e Produto</p>
+          <h1>Qualidade que começa na <em>regra de negócio</em>, não no bug.</h1>
+          <p class="lede">Sou Kevin Alves Quirino, analista de qualidade (QA) com visão de produto. Garanto que o que o time constrói funciona do jeito que o cliente precisa, desde a ideia até a versão que chega às mãos das pessoas.</p>
+          <div class="cta">
+            <a class="btn primary" href="#cases">Ver projetos</a>
+            <a class="btn" href="assets/cv/Kevin-Quirino-QA.pdf" download>Currículo de Qualidade</a>
+            <a class="btn" href="assets/cv/Kevin-Quirino-Produto.pdf" download>Currículo de Produto</a>
+          </div>
+        </div>
+        <div class="portrait">
+          <img class="photo" src="assets/img/foto.jpg" alt="Foto de Kevin Alves Quirino sorrindo, ao ar livre" width="800" height="800" fetchpriority="high">
+          <div class="summary">
+            <ul>
+              <li>Entendo o problema do cliente antes de testar</li>
+              <li>Combino com o time o que significa "pronto"</li>
+              <li>Faço o computador repetir os testes por mim</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <ul class="facts" aria-label="Números">
+        <li><b>37</b><span>testes automáticos publicados</span></li>
+        <li><b>2</b><span>falhas reais encontradas em um app público</span></li>
+        <li><b>3</b><span>tipos de sistema testados: sites, apps e integrações</span></li>
+        <li><b>Finanças</b><span>produtos para empresas e para pessoas</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="cases">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Projetos</p>
+        <h2>O que eu já fiz, explicado passo a passo</h2>
+        <p class="lede">Projetos do meu trabalho, descritos sem dados das empresas, e projetos públicos que você pode abrir. Cada um conta o problema, o que eu fiz e o que aprendi.</p>
+      </div>
+      <div class="case-bar">
+        <div class="seg" role="tablist" aria-label="Tipo de projeto">
+          <button role="tab" id="seg-q" aria-selected="true" aria-controls="cases-qualidade" type="button" data-kind="Qualidade">Qualidade</button>
+          <button role="tab" id="seg-p" aria-selected="false" aria-controls="cases-produto" type="button" data-kind="Produto" tabindex="-1">Produto</button>
+        </div>
+        <p class="seg-note" id="seg-note">Trabalho real, descrito sem dados das empresas, e projetos públicos com código aberto.</p>
+      </div>
+<!-- cases:inicio -->
+      <div class="cases" id="cases-qualidade" role="tabpanel" aria-labelledby="seg-q">
+        <a class="case" href="cases/app-credito.html">
+          <span class="case-top"><h3>Testes automáticos de um app de crédito</h3><span class="st pass">Trabalho · dados protegidos</span></span>
+          <p>Criei os testes automáticos do aplicativo de crédito para pessoas, cobrindo as jornadas que o cliente mais usa.</p>
+          <span class="nums"><span><b>5</b>jornadas automatizadas</span><span><b>9</b>telas mapeadas</span></span>
+          <ul class="tags" aria-label="Ferramentas"><li>Appium</li><li>WebdriverIO</li><li>TypeScript</li></ul>
+          <span class="go">Ler o case →</span>
+        </a>
+        <a class="case" href="cases/nuvem.html">
+          <span class="case-top"><h3>Testes de celular rodando sozinhos na nuvem</h3><span class="st pass">Trabalho · dados protegidos</span></span>
+          <p>Fiz os testes do app rodarem num celular virtual na nuvem, em horários agendados, sem ninguém precisar apertar um botão.</p>
+          <span class="nums"><span><b>4x</b>por dia, o teste rápido</span><span><b>14 dias</b>de vídeos guardados</span></span>
+          <ul class="tags" aria-label="Ferramentas"><li>GitHub Actions</li><li>Emulador Android</li><li>Appium</li></ul>
+          <span class="go">Ler o case →</span>
+        </a>
+        <a class="case" href="cases/triagem.html">
+          <span class="case-top"><h3>Separar bug de verdade de falha passageira</h3><span class="st pass">Trabalho · dados protegidos</span></span>
+          <p>Quando um teste falha, o sistema repete antes de avisar o time e só abre um chamado se o problema for real.</p>
+          <span class="nums"><span><b>3</b>repetições antes de avisar</span><span><b>12</b>sinais de ambiente reconhecidos</span></span>
+          <ul class="tags" aria-label="Ferramentas"><li>Node.js</li><li>Jira</li><li>Microsoft Teams</li></ul>
+          <span class="go">Ler o case →</span>
+        </a>
+        <a class="case" href="cases/painel.html">
+          <span class="case-top"><h3>Painel único de acompanhamento dos testes</h3><span class="st pass">Trabalho · dados protegidos</span></span>
+          <p>Evoluí, junto com o time, um painel que mostra num lugar só os resultados, a agenda e os vídeos dos testes.</p>
+          <span class="nums"><span><b>3</b>frentes num painel só</span><span><b>22</b>passos explicados em português</span></span>
+          <ul class="tags" aria-label="Ferramentas"><li>React</li><li>Node.js</li><li>GitHub Actions</li></ul>
+          <span class="go">Ler o case →</span>
+        </a>
+        <a class="case" href="cases/auditoria.html">
+          <span class="case-top"><h3>Monitoramento de um sistema de auditoria</h3><span class="st pass">Trabalho · dados protegidos</span></span>
+          <p>Testes que entram sozinhos num sistema web de auditoria de propostas de crédito e conferem, ao longo do dia, se ele continua funcionando.</p>
+          <span class="nums"><span><b>5 min</b>entre cada conferência</span><span><b>120</b>conferências por dia</span></span>
+          <ul class="tags" aria-label="Ferramentas"><li>Playwright</li><li>TypeScript</li><li>Node.js</li></ul>
+          <span class="go">Ler o case →</span>
+        </a>
+        <a class="case" href="https://github.com/alvessq/qa-automation-portfolio/tree/main/apps/mobile-e2e">
+          <span class="case-top"><h3>Projeto público: app de compras</h3><span class="st wip">Código aberto</span></span>
+          <p>Recriei do zero, num app público de demonstração, a abordagem que uso no trabalho.</p>
+          <span class="nums"><span><b>18</b>testes automáticos</span><span><b>2</b>falhas encontradas no app</span></span>
+          <ul class="tags" aria-label="Ferramentas"><li>Appium</li><li>WebdriverIO</li><li>TypeScript</li></ul>
+          <span class="go">Ver no GitHub →</span>
+        </a>
+        <a class="case" href="https://github.com/alvessq/qa-automation-portfolio/tree/main/apps/web-e2e">
+          <span class="case-top"><h3>Projeto público: loja on-line</h3><span class="st wip">Código aberto</span></span>
+          <p>Testes que fazem uma compra completa num site de demonstração e checam várias vezes por dia se ele continua no ar.</p>
+          <span class="nums"><span><b>19</b>testes automáticos</span><span><b>3x</b>verificações por dia</span></span>
+          <ul class="tags" aria-label="Ferramentas"><li>Playwright</li><li>TypeScript</li><li>GitHub Actions</li></ul>
+          <span class="go">Ver no GitHub →</span>
+        </a>
+        <a class="case" href="https://github.com/alvessq/qa-automation-portfolio/tree/main/apps/test-scheduler">
+          <span class="case-top"><h3>Projeto público: painel de testes</h3><span class="st wip">Código aberto</span></span>
+          <p>O painel que agenda, roda e acompanha os testes do app e do site, refeito do zero com o mesmo desenho do que uso no trabalho.</p>
+          <span class="nums"><span><b>3</b>abas: no computador, na nuvem e chamados</span><span><b>1</b>fila única para todos os testes</span></span>
+          <ul class="tags" aria-label="Ferramentas"><li>React</li><li>Node.js</li><li>GitHub Actions</li></ul>
+          <span class="go">Ver no GitHub →</span>
+        </a>
+      </div>
+      <div class="cases" id="cases-produto" role="tabpanel" aria-labelledby="seg-p" hidden>
+        <a class="case" href="cases/po-auditoria.html">
+          <span class="case-top"><h3>Product Owner do sistema de auditoria</h3><span class="st pass">Trabalho · dados protegidos</span></span>
+          <p>Fui a referência de regra de negócio do sistema de auditoria e atuei por um período como Product Owner do produto.</p>
+          <span class="nums"><span><b>PO</b>por um período</span><span><b>Referência</b>em regra de negócio</span></span>
+          <ul class="tags" aria-label="Ferramentas"><li>Discovery</li><li>Refinamento</li><li>Critérios de aceite</li><li>Jira</li></ul>
+          <span class="go">Ler o case →</span>
+        </a>
+        <a class="case" href="cases/proposta.html">
+          <span class="case-top"><h3>Como propus testes automáticos no celular</h3><span class="st pass">Trabalho · dados protegidos</span></span>
+          <p>Como mostrei o valor de automatizar os testes do aplicativo antes de pedir tempo ao time.</p>
+          <span class="nums"><span><b>Do zero</b>até a primeira versão</span><span><b>3</b>projetos que vieram depois</span></span>
+          <ul class="tags" aria-label="Ferramentas"><li>Visão de produto</li><li>Appium</li></ul>
+          <span class="go">Ler o case →</span>
+        </a>
+      </div>
+<!-- cases:fim -->
+    </div>
+  </section>
+
+  <section id="processo">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Como trabalho</p>
+        <h2>Cinco etapas, da ideia ao cliente</h2>
+        <p class="lede">Clique em cada etapa para ver como ela funcionou no app de crédito em que trabalhei, sem dados da empresa.</p>
+      </div>
+      <div class="steps" role="tablist" aria-label="Etapas">
+        <button class="step" role="tab" aria-selected="true" aria-controls="panel" type="button"><span class="node"><i>1</i></span><strong>Entender o negócio</strong><span class="q">Quem usa e o que não pode dar errado</span></button>
+        <button class="step" role="tab" aria-selected="false" aria-controls="panel" type="button" tabindex="-1"><span class="node"><i>2</i></span><strong>Combinar as regras</strong><span class="q">O que o time aceita como pronto</span></button>
+        <button class="step" role="tab" aria-selected="false" aria-controls="panel" type="button" tabindex="-1"><span class="node"><i>3</i></span><strong>Planejar os testes</strong><span class="q">O que testar e de que jeito</span></button>
+        <button class="step" role="tab" aria-selected="false" aria-controls="panel" type="button" tabindex="-1"><span class="node"><i>4</i></span><strong>Automatizar</strong><span class="q">Testes que rodam sozinhos</span></button>
+        <button class="step" role="tab" aria-selected="false" aria-controls="panel" type="button" tabindex="-1"><span class="node"><i>5</i></span><strong>Acompanhar e melhorar</strong><span class="q">Aprender com o que acontece no uso real</span></button>
+      </div>
+      <div class="panel" id="panel" role="tabpanel" aria-live="polite">
+        <div class="panel-head"><b>Mapa do que não pode dar errado</b><span>Resultado: Prioridades definidas</span></div>
+        <div class="panel-body"><p>Antes de testar, levanto com negócio e produto o que causa mais prejuízo se falhar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="competencias">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Ferramentas</p>
+        <h2>O que eu uso e para quê</h2>
+      </div>
+      <div class="skills">
+        <div class="skill-group"><h3>Qualidade</h3><p>Para verificar se sites e aplicativos funcionam.</p><ul>
+          <li><b>Playwright e Cypress</b><span>simulam uma pessoa usando um site</span></li>
+          <li><b>Appium e WebdriverIO</b><span>fazem o mesmo em aplicativos de celular</span></li>
+          <li><b>Postman e Swagger</b><span>testam a comunicação entre sistemas</span></li>
+          <li><b>Cucumber e Gherkin</b><span>transformam regras escritas em português em testes</span></li>
+        </ul></div>
+        <div class="skill-group"><h3>Produto</h3><p>Para decidir o que construir e organizar o trabalho.</p><ul>
+          <li><b>Discovery</b><span>entender o problema antes de pensar na solução</span></li>
+          <li><b>Critérios de aceite</b><span>regras claras do que precisa funcionar</span></li>
+          <li><b>Jira e Confluence</b><span>organizar tarefas e documentar decisões</span></li>
+          <li><b>Scrum e Kanban</b><span>formas de o time planejar e entregar em ciclos</span></li>
+        </ul></div>
+        <div class="skill-group"><h3>Entrega</h3><p>Para levar as mudanças até o cliente com segurança.</p><ul>
+          <li><b>GitHub Actions e Azure DevOps</b><span>rodam os testes sozinhos a cada mudança</span></li>
+          <li><b>Git</b><span>guarda o histórico de tudo o que mudou</span></li>
+          <li><b>Grafana e Datadog</b><span>painéis que mostram se o sistema está saudável</span></li>
+        </ul></div>
+        <div class="skill-group"><h3>Dados e programação</h3><p>Para escrever os testes e consultar informações.</p><ul>
+          <li><b>JavaScript e TypeScript</b><span>linguagens que uso nos testes automáticos</span></li>
+          <li><b>SQL</b><span>consultar dados para conferir resultados</span></li>
+          <li><b>Python</b><span>análise de dados e automações</span></li>
+        </ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="trajetoria">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Trajetória</p>
+        <h2>Experiência e formação</h2>
+      </div>
+      <div class="timeline-wrap">
+        <div>
+          <p class="tl-title">Experiência</p>
+          <ol class="tl">
+            <li class="now"><span class="when">set/2025 – out/2026</span><h3>Analista de Qualidade</h3><span class="org">Teddy Open Finance</span><p>Produtos financeiros para empresas e para pessoas, como empréstimo consignado, auditoria e integrações com bancos. Fui a referência do time em regra de negócio, atuei como Product Owner do produto de auditoria por um período e criei a automação de testes do aplicativo de celular.</p></li>
+            <li><span class="when">jan/2023 – set/2025</span><h3>Analista de Qualidade</h3><span class="org">TopDown Sistemas</span><p>Onde comecei em qualidade de software, testando sistemas antes de cada nova versão.</p></li>
+            <li><span class="when">2021 – 2022</span><h3>Montador</h3><span class="org">Mercedes-Benz do Brasil</span></li>
+            <li><span class="when">2017 – 2020</span><h3>Montador</h3><span class="org">SM Sistemas Modulares</span></li>
+          </ol>
+        </div>
+        <div>
+          <p class="tl-title">Formação</p>
+          <ol class="tl">
+            <li class="now"><span class="when">nov/2025</span><h3>Product Manager: uma jornada em gestão de produtos</h3><span class="org">Alura</span></li>
+            <li><span class="when">set/2024</span><h3>Machine Learning e Data Science com Python</h3><span class="org">Saint Paul</span></li>
+            <li><span class="when">mai/2023</span><h3>Big Data e Analytics · Linux Essentials</h3><span class="org">FIAP</span></li>
+            <li><span class="when">2020 – 2023</span><h3>Bacharelado em Sistemas de Informação</h3><span class="org">UNIP</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="wrap contact-grid">
+      <div class="sec-head">
+        <p class="label">Contato</p>
+        <h2>Vamos conversar?</h2>
+        <p class="lede">Estou aberto a oportunidades em Qualidade e em Produto. Respondo por e-mail ou pelo LinkedIn.</p>
+      </div>
+      <ul class="links-list">
+        <li><span class="k">E-mail</span><span class="v"><a id="email" href="mailto:kevinalvessq@gmail.com">kevinalvessq@gmail.com</a></span><button class="small-btn" id="copy-email" type="button">Copiar</button></li>
+        <li><span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/kevin-alves-quirino-0942091b9/" rel="me">Kevin Alves Quirino</a></span></li>
+        <li><span class="k">GitHub</span><span class="v"><a href="https://github.com/alvessq" rel="me">github.com/alvessq</a></span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Kevin Alves Quirino · São Bernardo do Campo, SP</span><span>Projetos públicos feitos com apps de demonstração e dados inventados</span></div>
+</footer>
+
+<script src="assets/js/tema.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
