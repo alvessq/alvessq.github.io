@@ -63,9 +63,9 @@ export default [
   {
     id: 'triagem', kind: 'Qualidade', title: 'Separar bug de verdade de falha passageira', stText: 'Trabalho · dados protegidos',
     sum: 'Quando um teste falha, o sistema repete antes de avisar o time e só abre um chamado se o problema for real.',
-    card: [['3 bugs', 'barrados em homologação'], ['4 de 7', 'falhas filtradas antes de virar chamado']],
+    card: [['3 bugs', 'barrados em homologação'], ['4', 'alarmes falsos evitados']],
     role: 'Idealizei e construí', when: '2025–2026', tools: ['Node.js', 'Jira', 'Microsoft Teams'],
-    stats: [['3 bugs', 'confirmados e abertos no Jira com vídeo, ainda em homologação, antes de chegar ao cliente'], ['4 de 7', 'falhas filtradas antes de virar chamado: eram passageiras ou de ambiente'], ['3', 'repetições antes de virar chamado'], ['12', 'sinais de problema de ambiente reconhecidos']],
+    stats: [['3 bugs', 'confirmados e abertos no Jira com vídeo, ainda em homologação: nenhum bug real foi ignorado'], ['4', 'alarmes falsos evitados: 2 falhas passageiras e 2 do emulador, conferidas de novo antes de chamar o time'], ['3', 'repetições antes de virar chamado'], ['12', 'sinais de problema de ambiente reconhecidos']],
     context: ['Os testes do aplicativo rodavam várias vezes por dia num celular virtual. Testes em celular às vezes falham por instabilidade, e não por erro no app.', 'Cada falha virava um alerta. Muitos eram alarmes falsos, e cada um tirava alguém do que estava fazendo.'],
     challenge: 'Avisar rápido quando existe um problema real, sem incomodar o time com falhas passageiras e sem deixar um bug de verdade passar.',
     flowIntro: 'Quando um teste falha, o sistema tenta de novo antes de avisar alguém:',
