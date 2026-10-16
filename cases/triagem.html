@@ -65,7 +65,7 @@
 
     <section id="contexto">
       <h2>Contexto</h2>
-      <p>Os testes do aplicativo rodavam várias vezes por dia num celular virtual. Testes em celular às vezes falham por instabilidade, e não por erro no app.</p>
+      <p>Os testes do aplicativo rodavam várias vezes por dia num emulador Android (um celular simulado). Testes de aplicativo às vezes falham por instabilidade, e não por erro no app.</p>
       <p>Cada falha virava um alerta. Muitos eram alarmes falsos, e cada um tirava alguém do que estava fazendo.</p>
       <h3 class="sub">O desafio</h3>
       <p>Avisar rápido quando existe um problema real, sem incomodar o time com falhas passageiras e sem deixar um bug de verdade passar.</p>
@@ -77,7 +77,7 @@
       <div class="flow" role="img" aria-label="Diagrama: Um teste falha, depois Repete o mesmo teste até 3 vezes, depois Bug confirmado e Falha passageira e Problema de ambiente, depois Painel do time">
         <div class="level"><div class="fnode t-risk"><b>Um teste falha</b></div></div>
         <div class="level"><div class="fnode"><b>Repete o mesmo teste até 3 vezes</b><span>cada repetição grava vídeo e registros</span></div></div>
-        <div class="level multi"><div class="fnode t-risk"><b>Bug confirmado</b><span>falhou nas 3: chamado no Jira e aviso no Teams</span></div><div class="fnode t-wip"><b>Falha passageira</b><span>passou em alguma: só um aviso curto</span></div><div class="fnode t-accent"><b>Problema de ambiente</b><span>o celular virtual caiu: sem chamado</span></div></div>
+        <div class="level multi"><div class="fnode t-risk"><b>Bug confirmado</b><span>falhou nas 3: chamado no Jira e aviso no Teams</span></div><div class="fnode t-wip"><b>Falha passageira</b><span>passou em alguma: só um aviso curto</span></div><div class="fnode t-accent"><b>Problema de ambiente</b><span>o emulador caiu: sem chamado</span></div></div>
         <div class="level"><div class="fnode t-pass"><b>Painel do time</b><span>mostra cada repetição e o vídeo</span></div></div>
       </div>
     </section>
@@ -88,7 +88,7 @@
         <li><b>Defini a regra das 3 repetições</b><span>Uma falha só vira bug quando se repete. Uma única falha não basta para chamar o time.</span></li>
         <li><b>Liguei os testes ao Jira</b><span>O chamado já nasce com vídeo, registros e o passo em que o teste parou.</span></li>
         <li><b>Evitei chamados duplicados</b><span>Antes de abrir um chamado, o sistema procura se já existe um aberto para o mesmo problema.</span></li>
-        <li><b>Reconheci problemas de ambiente</b><span>12 tipos de mensagem de celular virtual desligado ou travado são tratados como ambiente, não como bug.</span></li>
+        <li><b>Reconheci problemas de ambiente</b><span>12 tipos de mensagem de emulador desligado ou travado são tratados como ambiente, não como bug.</span></li>
         <li><b>Mostrei tudo no painel</b><span>Cada repetição, com o resultado e o vídeo, aparece no painel do time.</span></li>
       </ul>
     </section>
@@ -112,7 +112,7 @@
   </article>
 
   <nav class="pager" aria-label="Outros cases">
-    <a href="nuvem.html"><span>← Case anterior</span>Testes de celular rodando sozinhos na nuvem</a>
+    <a href="nuvem.html"><span>← Case anterior</span>Testes do aplicativo rodando sozinhos na nuvem</a>
     <a class="next" href="painel.html"><span>Próximo case →</span>Painel único de acompanhamento dos testes</a>
   </nav>
 </main>

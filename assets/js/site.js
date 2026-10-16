@@ -103,8 +103,8 @@
       title: 'Testes que rodam sozinhos',
       out: 'Problemas encontrados antes do cliente',
       html:
-        '<p>Os testes rodam sozinhos num celular virtual na nuvem, em horários agendados:</p>' +
-        '<ol class="flow"><li>A versão mais nova do app é baixada sozinha</li><li>Um celular virtual liga na nuvem e roda os testes</li><li>Cada execução guarda vídeo, prints e registros</li><li>O resultado aparece no painel do time</li></ol>',
+        '<p>Os testes rodam sozinhos num emulador Android (um celular simulado) na nuvem, em horários agendados:</p>' +
+        '<ol class="flow"><li>A versão mais nova do app é baixada sozinha</li><li>Um emulador liga na nuvem e roda os testes</li><li>Cada execução guarda vídeo, prints e registros</li><li>O resultado aparece no painel do time</li></ol>',
     },
     {
       title: 'Sinais de qualidade',
@@ -113,7 +113,7 @@
         '<p>Depois da entrega, acompanho o que os testes estão dizendo e separo o que é problema real:</p>' +
         '<div class="kpis"><div class="kpi"><b>Bug confirmado</b><span>falhou nas 3 repetições: abre chamado com evidências</span></div>' +
         '<div class="kpi"><b>Falha passageira</b><span>passou em alguma repetição: só um aviso curto</span></div>' +
-        '<div class="kpi"><b>Problema de ambiente</b><span>o celular virtual caiu: não é culpa do app</span></div>' +
+        '<div class="kpi"><b>Problema de ambiente</b><span>o emulador caiu: não é culpa do app</span></div>' +
         '<div class="kpi"><b>Serviços fora do ar</b><span>a conferência avisa antes de qualquer teste no app</span></div></div>',
     },
   ];

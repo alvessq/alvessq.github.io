@@ -7,7 +7,7 @@ export default [
     card: [['5', 'jornadas automatizadas'], ['9', 'telas mapeadas']],
     role: 'Propus e construí', when: '2025–2026', tools: ['Appium', 'WebdriverIO', 'TypeScript'],
     stats: [['5', 'jornadas do cliente automatizadas'], ['9', 'telas do app mapeadas para os testes'], ['100%', 'dos elementos com id encontrados pelo id, não pelo texto'], ['5 min', 'entre cada conferência dos 5 serviços por trás do app']],
-    context: ['Um aplicativo de crédito para pessoas, em que os testes no celular eram feitos à mão antes de cada versão.', 'Cada nova versão exigia alguém repetindo os mesmos passos: entrar no app, simular, escolher uma oferta e seguir até a contratação.'],
+    context: ['Um aplicativo de crédito para pessoas, em que os testes do aplicativo eram feitos à mão antes de cada versão.', 'Cada nova versão exigia alguém repetindo os mesmos passos: entrar no app, simular, escolher uma oferta e seguir até a contratação.'],
     challenge: 'Testar login, simulação e contratação sem depender de alguém repetindo os mesmos passos a cada entrega, e sem gerar contratos sem querer.',
     flowIntro: 'Primeiro os serviços por trás do app são conferidos um a um. Depois o teste segue a ordem em que o cliente usa o app:',
     flow: [
@@ -31,32 +31,32 @@ export default [
     evidence: ['A mesma abordagem, com localizadores por id, está no meu projeto público de testes de um app de compras.', 'https://github.com/alvessq/qa-automation-portfolio/tree/main/apps/mobile-e2e']
   },
   {
-    id: 'nuvem', kind: 'Qualidade', title: 'Testes de celular rodando sozinhos na nuvem', stText: 'Trabalho · dados protegidos',
-    sum: 'Fiz os testes do app rodarem num celular virtual na nuvem, em horários agendados, sem ninguém precisar apertar um botão.',
+    id: 'nuvem', kind: 'Qualidade', title: 'Testes do aplicativo rodando sozinhos na nuvem', stText: 'Trabalho · dados protegidos',
+    sum: 'Fiz os testes do app rodarem num emulador Android (um celular simulado) na nuvem, em horários agendados, sem ninguém precisar apertar um botão.',
     card: [['4x', 'por dia, o teste rápido'], ['14 dias', 'de vídeos guardados']],
     role: 'Construí', when: '2025–2026', tools: ['GitHub Actions', 'Emulador Android', 'Appium'],
     stats: [['4x', 'por dia roda o teste rápido'], ['1x', 'por noite roda o teste completo'], ['14 dias', 'de vídeos, prints e registros guardados'], ['3', 'execuções entre cada reinício do emulador no computador']],
-    context: ['Os testes funcionavam no meu computador, mas o celular virtual da nuvem travava ao abrir o app.', 'Sem a nuvem, os testes só rodavam quando alguém lembrava de rodar.'],
+    context: ['Os testes funcionavam no meu computador, mas o emulador da nuvem travava ao abrir o app.', 'Sem a nuvem, os testes só rodavam quando alguém lembrava de rodar.'],
     challenge: 'Descobrir por que o mesmo teste passava na minha máquina e falhava na nuvem, sem gastar horas de execução tentando no escuro.',
     flowIntro: 'Do horário agendado até o resultado no painel:',
     flow: [
       [['Agenda', 'rápido a cada 6 horas · completo 1x por noite', 'accent']],
       [['Baixa a versão mais nova do app']],
-      [['Celular virtual na nuvem', 'Android 14'], ['Modo local que imita a nuvem', 'para investigar sem custo']],
+      [['Emulador Android na nuvem', 'Android 14'], ['Modo local que imita a nuvem', 'para investigar sem custo']],
       [['Roda os testes', 'com vídeo gravado pelo próprio projeto']],
       [['Vídeo, prints e registros', 'guardados por 14 dias', 'pass'], ['Painel do time', 'mostra o resultado', 'pass']]
     ],
     did: [
       ['Reproduzi a nuvem no meu computador', 'Criei um modo que imita as condições da nuvem, sem placa de vídeo, para investigar sem gastar execuções.'],
-      ['Estabilizei o celular virtual', 'Ajustei memória, versão do Android e configurações gráficas até ele parar de travar.'],
-      ['Fiz falhar rápido', 'Se o celular virtual cai, a execução para na hora, em vez de esperar até o tempo acabar.'],
+      ['Estabilizei o emulador', 'Ajustei memória, versão do Android e configurações gráficas até ele parar de travar.'],
+      ['Fiz falhar rápido', 'Se o emulador cai, a execução para na hora, em vez de esperar até o tempo acabar.'],
       ['Automatizei a versão do app', 'A versão mais nova é baixada sozinha antes de cada rodada.'],
       ['Preparei o computador sozinho', 'Ao abrir o painel, a versão mais nova do app é baixada e, se nenhum emulador estiver ligado, um é aberto em segundo plano, sem atrasar o painel.'],
       ['Reiniciei o emulador de tempos em tempos', 'No computador, o emulador é reiniciado a cada 3 execuções, sem apagar os dados, para não travar em sessões longas.'],
       ['Gravei o vídeo por conta própria', 'A gravação não depende do Appium. No computador ficam só os 3 vídeos mais recentes; na nuvem, cada execução guarda vídeo, prints e registros por 14 dias.']
     ],
-    before: ['Testes rodavam só quando alguém lembrava', 'O celular virtual travava na nuvem', 'Investigar custava horas de execução', 'Preparar o computador era manual'],
-    after: ['Rodam sozinhos em horários fixos', 'Celular virtual estável', 'Problema investigado no meu computador', 'App e emulador prontos ao abrir o painel'],
+    before: ['Testes rodavam só quando alguém lembrava', 'O emulador travava na nuvem', 'Investigar custava horas de execução', 'Preparar o computador era manual'],
+    after: ['Rodam sozinhos em horários fixos', 'Emulador estável', 'Problema investigado no meu computador', 'App e emulador prontos ao abrir o painel'],
     learn: 'Reproduzir o problema perto de mim foi mais rápido do que tentar adivinhar o que acontecia lá longe.',
     evidence: ['Refiz do zero, no meu projeto público, o modo que imita a nuvem, a parada rápida quando o emulador cai, a reinicialização a cada 3 suítes e o preparo automático do app e do emulador.', 'https://github.com/alvessq/qa-automation-portfolio/tree/main/apps/mobile-e2e/scripts']
   },
@@ -66,20 +66,20 @@ export default [
     card: [['3 bugs', 'barrados em homologação'], ['4', 'alarmes falsos evitados']],
     role: 'Idealizei e construí', when: '2025–2026', tools: ['Node.js', 'Jira', 'Microsoft Teams'],
     stats: [['3 bugs', 'confirmados e abertos no Jira com vídeo, ainda em homologação: nenhum bug real foi ignorado'], ['4', 'alarmes falsos evitados: 2 falhas passageiras e 2 do emulador, conferidas de novo antes de chamar o time'], ['3', 'repetições antes de virar chamado'], ['12', 'sinais de problema de ambiente reconhecidos']],
-    context: ['Os testes do aplicativo rodavam várias vezes por dia num celular virtual. Testes em celular às vezes falham por instabilidade, e não por erro no app.', 'Cada falha virava um alerta. Muitos eram alarmes falsos, e cada um tirava alguém do que estava fazendo.'],
+    context: ['Os testes do aplicativo rodavam várias vezes por dia num emulador Android (um celular simulado). Testes de aplicativo às vezes falham por instabilidade, e não por erro no app.', 'Cada falha virava um alerta. Muitos eram alarmes falsos, e cada um tirava alguém do que estava fazendo.'],
     challenge: 'Avisar rápido quando existe um problema real, sem incomodar o time com falhas passageiras e sem deixar um bug de verdade passar.',
     flowIntro: 'Quando um teste falha, o sistema tenta de novo antes de avisar alguém:',
     flow: [
       [['Um teste falha', '', 'risk']],
       [['Repete o mesmo teste até 3 vezes', 'cada repetição grava vídeo e registros']],
-      [['Bug confirmado', 'falhou nas 3: chamado no Jira e aviso no Teams', 'risk'], ['Falha passageira', 'passou em alguma: só um aviso curto', 'wip'], ['Problema de ambiente', 'o celular virtual caiu: sem chamado', 'accent']],
+      [['Bug confirmado', 'falhou nas 3: chamado no Jira e aviso no Teams', 'risk'], ['Falha passageira', 'passou em alguma: só um aviso curto', 'wip'], ['Problema de ambiente', 'o emulador caiu: sem chamado', 'accent']],
       [['Painel do time', 'mostra cada repetição e o vídeo', 'pass']]
     ],
     did: [
       ['Defini a regra das 3 repetições', 'Uma falha só vira bug quando se repete. Uma única falha não basta para chamar o time.'],
       ['Liguei os testes ao Jira', 'O chamado já nasce com vídeo, registros e o passo em que o teste parou.'],
       ['Evitei chamados duplicados', 'Antes de abrir um chamado, o sistema procura se já existe um aberto para o mesmo problema.'],
-      ['Reconheci problemas de ambiente', '12 tipos de mensagem de celular virtual desligado ou travado são tratados como ambiente, não como bug.'],
+      ['Reconheci problemas de ambiente', '12 tipos de mensagem de emulador desligado ou travado são tratados como ambiente, não como bug.'],
       ['Mostrei tudo no painel', 'Cada repetição, com o resultado e o vídeo, aparece no painel do time.']
     ],
     before: ['Toda falha virava alerta', 'O time investigava alarmes falsos', 'Chamado aberto à mão, sem evidência'],
@@ -92,7 +92,7 @@ export default [
     sum: 'Evoluí, junto com o time, um painel que mostra num lugar só os resultados, a agenda e os vídeos dos testes.',
     card: [['3', 'frentes num painel só'], ['22', 'passos explicados em português']],
     role: 'Evoluí junto com o time', when: '2025–2026', tools: ['React', 'Node.js', 'GitHub Actions'],
-    stats: [['3', 'frentes num painel só: computador, nuvem e auditoria'], ['22', 'passos de teste explicados em português'], ['14', 'configurações conferidas ao abrir o painel'], ['0', 'testes de celular rodando sem alguém decidir']],
+    stats: [['3', 'frentes num painel só: computador, nuvem e auditoria'], ['22', 'passos de teste explicados em português'], ['14', 'configurações conferidas ao abrir o painel'], ['0', 'testes do aplicativo rodando sem alguém decidir']],
     context: ['Os resultados ficavam espalhados entre o computador de quem rodou, a nuvem e as mensagens do time.', 'Quem não era da área técnica não tinha como saber, sozinho, como os testes estavam.'],
     challenge: 'Dar a qualquer pessoa do time uma forma simples de ver como estão os testes, sem precisar entender as ferramentas por trás.',
     flowIntro: 'Tudo o que roda, em qualquer lugar, chega no mesmo painel:',
@@ -108,7 +108,7 @@ export default [
       ['Liguei o painel à nuvem', 'Pelo painel dá para disparar as execuções da nuvem e mudar os horários em que elas rodam.'],
       ['Juntei a auditoria', 'Os testes do sistema de auditoria ganharam uma área própria dentro do mesmo painel.'],
       ['Traduzi os testes', 'Cada passo do teste aparece em português, para quem não lê código entender o que foi testado.'],
-      ['Comecei seguro', 'Ao abrir, os testes de celular ficam pausados. Nada roda sem alguém decidir.'],
+      ['Comecei seguro', 'Ao abrir, os testes do aplicativo ficam pausados. Nada roda sem alguém decidir.'],
       ['Avisei o que falta', 'Na abertura, o painel lista 14 configurações e avisa quais estão faltando, sem mostrar nenhuma senha.']
     ],
     before: ['Resultados espalhados em vários lugares', 'Só quem rodou sabia o que aconteceu', 'Execuções da nuvem disparadas fora do painel', 'Configurações faltando só apareciam como erro'],
@@ -171,12 +171,12 @@ export default [
     evidence: null
   },
   {
-    id: 'proposta', kind: 'Produto', title: 'Como propus testes automáticos no celular', stText: 'Trabalho · dados protegidos',
+    id: 'proposta', kind: 'Produto', title: 'Como propus a automação de testes do aplicativo', stText: 'Trabalho · dados protegidos',
     sum: 'Como mostrei o valor de automatizar os testes do aplicativo antes de pedir tempo ao time.',
     card: [['Do zero', 'até a primeira versão'], ['3', 'projetos que vieram depois']],
     role: 'Propus e construí', when: '2025–2026', tools: ['Visão de produto', 'Appium'],
     stats: [['0 → 1', 'da ideia à primeira suíte automatizada'], ['3', 'projetos construídos em cima dela: nuvem, triagem e painel'], ['1', 'escopo pequeno para começar'], ['App', 'financeiro para pessoas']],
-    context: ['Um aplicativo financeiro em que todos os testes de celular eram feitos à mão.'],
+    context: ['Um aplicativo financeiro em que todos os testes do aplicativo eram feitos à mão.'],
     challenge: 'Convencer o time de que valia a pena investir em automação, sem pedir um projeto grande logo de cara.',
     flowIntro: 'Da ideia até virar a base de outros projetos:',
     flow: [
@@ -191,7 +191,7 @@ export default [
       ['Construí a primeira versão', 'Os primeiros testes automáticos do app, com Appium.'],
       ['Usei como base', 'Em cima dela vieram os testes na nuvem, a triagem de falhas e o painel.']
     ],
-    before: ['Todos os testes de celular feitos à mão', 'Automação vista como custo'],
+    before: ['Todos os testes do aplicativo feitos à mão', 'Automação vista como custo'],
     after: ['Fluxos críticos automatizados', 'Base para os projetos seguintes'],
     learn: 'Começar pequeno e mostrar resultado convence mais do que um plano grande.',
     evidence: null
