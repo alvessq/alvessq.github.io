@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Separar bug de verdade de falha passageira · Kevin Quirino</title>
+<meta name="description" content="Quando um teste falha, o sistema repete antes de avisar o time e só abre um chamado se o problema for real.">
+<link rel="canonical" href="https://alvessq.github.io/cases/triagem.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://alvessq.github.io/cases/triagem.html">
+<meta property="og:title" content="Separar bug de verdade de falha passageira">
+<meta property="og:description" content="Quando um teste falha, o sistema repete antes de avisar o time e só abre um chamado se o problema for real.">
+<meta property="og:image" content="https://alvessq.github.io/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0D12">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/css/case.css">
+<script>try { if (localStorage.getItem('tema') === 'light') document.documentElement.dataset.theme = 'light'; } catch (e) {}</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="back" href="../#cases">← Voltar para os projetos</a>
+    <a class="brand" href="../">Kevin Quirino</a>
+    <button class="small-btn" id="theme-btn" type="button" aria-pressed="false">Tema claro</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="intro">
+    <p class="kicker">Projeto de Qualidade · Trabalho</p>
+    <h1>Separar bug de verdade de falha passageira</h1>
+    <p class="lede">Quando um teste falha, o sistema repete antes de avisar o time e só abre um chamado se o problema for real.</p>
+    <dl class="facts">
+      <div><dt>Onde</dt><dd>Teddy Open Finance</dd></div>
+      <div><dt>Meu papel</dt><dd>Idealizei e construí</dd></div>
+      <div><dt>Quando</dt><dd>2025–2026</dd></div>
+      <div><dt>Ferramentas</dt><dd>Node.js, Jira, Microsoft Teams</dd></div>
+    </dl>
+    <ul class="toc" aria-label="Nesta página">
+      <li><a href="#numeros">Números</a></li>
+      <li><a href="#contexto">Contexto</a></li>
+      <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#o-que-fiz">O que eu fiz</a></li>
+      <li><a href="#antes-depois">Antes e depois</a></li>
+      <li><a href="#aprendi">O que aprendi</a></li>
+    </ul>
+  </div>
+
+  <article>
+    <section id="numeros">
+      <h2>Em números</h2>
+      <ul class="stats">
+        <li><b>3</b><span>repetições antes de virar chamado</span></li>
+        <li><b>3</b><span>caminhos possíveis para uma falha</span></li>
+        <li><b>12</b><span>sinais de problema de ambiente reconhecidos</span></li>
+        <li><b>1</b><span>chamado por problema, sem duplicar</span></li>
+      </ul>
+      <p class="fine">Números tirados da configuração e do código do projeto. Nenhum dado de cliente ou de negócio.</p>
+    </section>
+
+    <section id="contexto">
+      <h2>Contexto</h2>
+      <p>Os testes do aplicativo rodavam várias vezes por dia num celular virtual. Testes em celular às vezes falham por instabilidade, e não por erro no app.</p>
+      <p>Cada falha virava um alerta. Muitos eram alarmes falsos, e cada um tirava alguém do que estava fazendo.</p>
+      <h3 class="sub">O desafio</h3>
+      <p>Avisar rápido quando existe um problema real, sem incomodar o time com falhas passageiras e sem deixar um bug de verdade passar.</p>
+    </section>
+
+    <section id="como-funciona">
+      <h2>Como funciona</h2>
+      <p>Quando um teste falha, o sistema tenta de novo antes de avisar alguém:</p>
+      <div class="flow" role="img" aria-label="Diagrama: Um teste falha, depois Repete o mesmo teste até 3 vezes, depois Bug confirmado e Falha passageira e Problema de ambiente, depois Painel do time">
+        <div class="level"><div class="fnode t-risk"><b>Um teste falha</b></div></div>
+        <div class="level"><div class="fnode"><b>Repete o mesmo teste até 3 vezes</b><span>cada repetição grava vídeo e registros</span></div></div>
+        <div class="level multi"><div class="fnode t-risk"><b>Bug confirmado</b><span>falhou nas 3: chamado no Jira e aviso no Teams</span></div><div class="fnode t-wip"><b>Falha passageira</b><span>passou em alguma: só um aviso curto</span></div><div class="fnode t-accent"><b>Problema de ambiente</b><span>o celular virtual caiu: sem chamado</span></div></div>
+        <div class="level"><div class="fnode t-pass"><b>Painel do time</b><span>mostra cada repetição e o vídeo</span></div></div>
+      </div>
+    </section>
+
+    <section id="o-que-fiz">
+      <h2>O que eu fiz</h2>
+      <ul class="did">
+        <li><b>Defini a regra das 3 repetições</b><span>Uma falha só vira bug quando se repete. Uma única falha não basta para chamar o time.</span></li>
+        <li><b>Liguei os testes ao Jira</b><span>O chamado já nasce com vídeo, registros e o passo em que o teste parou.</span></li>
+        <li><b>Evitei chamados duplicados</b><span>Antes de abrir um chamado, o sistema procura se já existe um aberto para o mesmo problema.</span></li>
+        <li><b>Reconheci problemas de ambiente</b><span>12 tipos de mensagem de celular virtual desligado ou travado são tratados como ambiente, não como bug.</span></li>
+        <li><b>Mostrei tudo no painel</b><span>Cada repetição, com o resultado e o vídeo, aparece no painel do time.</span></li>
+      </ul>
+    </section>
+
+    <section id="antes-depois">
+      <h2>Antes e depois</h2>
+      <div class="compare">
+        <div class="col"><h3>Antes</h3><ul><li>Toda falha virava alerta</li><li>O time investigava alarmes falsos</li><li>Chamado aberto à mão, sem evidência</li></ul></div>
+        <div class="col after"><h3>Depois</h3><ul><li>Só falha confirmada vira chamado</li><li>Falha passageira gera só um aviso curto</li><li>Chamado chega com vídeo e registros</li></ul></div>
+      </div>
+    </section>
+
+    <section id="aprendi">
+      <h2>O que aprendi</h2>
+      <p class="lesson">Um alerta só ajuda quando as pessoas confiam nele. Avisar menos, e com mais certeza, fez mais diferença do que avisar tudo.</p>
+      <div class="evidence">
+        <p>O código e os dados são da empresa e não podem ser publicados. Refiz do zero, no meu projeto público, a triagem com 3 repetições, chamado sem duplicar e detecção de problema de ambiente. Lá o chamado é uma issue do GitHub, no lugar do Jira.</p>
+        <a class="btn" href="https://github.com/alvessq/qa-automation-portfolio/blob/main/apps/test-scheduler/src/triage.mjs">Ver projeto público</a>
+      </div>
+    </section>
+  </article>
+
+  <nav class="pager" aria-label="Outros cases">
+    <a href="nuvem.html"><span>← Case anterior</span>Testes de celular rodando sozinhos na nuvem</a>
+    <a class="next" href="painel.html"><span>Próximo case →</span>Painel único de acompanhamento dos testes</a>
+  </nav>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Kevin Alves Quirino</span><span>Case descrito sem dados, nomes ou regras internas da empresa.</span></div>
+</footer>
+
+<script src="../assets/js/tema.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Monitoramento de um sistema de auditoria · Kevin Quirino</title>
+<meta name="description" content="Testes que entram sozinhos num sistema web de auditoria de propostas de crédito e conferem, ao longo do dia, se ele continua funcionando.">
+<link rel="canonical" href="https://alvessq.github.io/cases/auditoria.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://alvessq.github.io/cases/auditoria.html">
+<meta property="og:title" content="Monitoramento de um sistema de auditoria">
+<meta property="og:description" content="Testes que entram sozinhos num sistema web de auditoria de propostas de crédito e conferem, ao longo do dia, se ele continua funcionando.">
+<meta property="og:image" content="https://alvessq.github.io/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0D12">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/css/case.css">
+<script>try { if (localStorage.getItem('tema') === 'light') document.documentElement.dataset.theme = 'light'; } catch (e) {}</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="back" href="../#cases">← Voltar para os projetos</a>
+    <a class="brand" href="../">Kevin Quirino</a>
+    <button class="small-btn" id="theme-btn" type="button" aria-pressed="false">Tema claro</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="intro">
+    <p class="kicker">Projeto de Qualidade · Trabalho</p>
+    <h1>Monitoramento de um sistema de auditoria</h1>
+    <p class="lede">Testes que entram sozinhos num sistema web de auditoria de propostas de crédito e conferem, ao longo do dia, se ele continua funcionando.</p>
+    <dl class="facts">
+      <div><dt>Onde</dt><dd>Teddy Open Finance</dd></div>
+      <div><dt>Meu papel</dt><dd>Construí</dd></div>
+      <div><dt>Quando</dt><dd>2025–2026</dd></div>
+      <div><dt>Ferramentas</dt><dd>Playwright, TypeScript, Node.js</dd></div>
+    </dl>
+    <ul class="toc" aria-label="Nesta página">
+      <li><a href="#numeros">Números</a></li>
+      <li><a href="#contexto">Contexto</a></li>
+      <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#o-que-fiz">O que eu fiz</a></li>
+      <li><a href="#antes-depois">Antes e depois</a></li>
+      <li><a href="#aprendi">O que aprendi</a></li>
+    </ul>
+  </div>
+
+  <article>
+    <section id="numeros">
+      <h2>Em números</h2>
+      <ul class="stats">
+        <li><b>5 min</b><span>entre cada conferência do sistema</span></li>
+        <li><b>120</b><span>conferências por dia útil</span></li>
+        <li><b>10 h</b><span>por dia de monitoramento, das 8h às 18h</span></li>
+        <li><b>1 h</b><span>entre cada teste de montagem das filas</span></li>
+      </ul>
+      <p class="fine">Números tirados da configuração e do código do projeto. Nenhum dado de cliente ou de negócio.</p>
+    </section>
+
+    <section id="contexto">
+      <h2>Contexto</h2>
+      <p>Um sistema web em que a equipe audita propostas de crédito, organizadas em filas de trabalho que o próprio sistema monta.</p>
+      <p>Se o sistema saísse do ar ou parasse de montar as filas, a equipe só descobria quando tentava trabalhar.</p>
+      <h3 class="sub">O desafio</h3>
+      <p>Saber durante o expediente se o sistema está no ar e se as filas continuam sendo montadas, sem alguém precisar entrar para conferir.</p>
+    </section>
+
+    <section id="como-funciona">
+      <h2>Como funciona</h2>
+      <p>Durante o expediente, duas verificações rodam em paralelo:</p>
+      <div class="flow" role="img" aria-label="Diagrama: Agenda do horário comercial, depois Conferência rápida e Teste completo, depois Histórico e vídeos e Painel do time e Jira">
+        <div class="level"><div class="fnode t-accent"><b>Agenda do horário comercial</b><span>das 8h às 18h</span></div></div>
+        <div class="level multi"><div class="fnode"><b>Conferência rápida</b><span>a cada 5 minutos: o sistema responde?</span></div><div class="fnode"><b>Teste completo</b><span>a cada 1 hora: as filas são montadas?</span></div></div>
+        <div class="level multi"><div class="fnode t-pass"><b>Histórico e vídeos</b></div><div class="fnode t-pass"><b>Painel do time</b></div><div class="fnode t-pass"><b>Jira</b></div></div>
+      </div>
+    </section>
+
+    <section id="o-que-fiz">
+      <h2>O que eu fiz</h2>
+      <ul class="did">
+        <li><b>Criei a conferência rápida</b><span>A cada 5 minutos, um teste checa se o sistema responde.</span></li>
+        <li><b>Testei o que importa</b><span>Um teste entra no sistema, pede para montar as filas de propostas e confere a mensagem de confirmação.</span></li>
+        <li><b>Respeitei o expediente</b><span>Os testes rodam das 8h às 18h, quando a equipe usa o sistema.</span></li>
+        <li><b>Montei a agenda</b><span>Fila, histórico, vídeos e controles para rodar, parar e editar cada teste.</span></li>
+        <li><b>Liguei ao resto</b><span>A agenda usa o mesmo painel e o mesmo Jira dos testes do aplicativo.</span></li>
+      </ul>
+    </section>
+
+    <section id="antes-depois">
+      <h2>Antes e depois</h2>
+      <div class="compare">
+        <div class="col"><h3>Antes</h3><ul><li>Problemas descobertos por quem tentava usar</li><li>Ninguém conferia o sistema ao longo do dia</li><li>Sem histórico do que aconteceu</li></ul></div>
+        <div class="col after"><h3>Depois</h3><ul><li>Conferência a cada 5 minutos</li><li>Montagem das filas testada a cada hora</li><li>Histórico e vídeos no painel</li></ul></div>
+      </div>
+    </section>
+
+    <section id="aprendi">
+      <h2>O que aprendi</h2>
+      <p class="lesson">Rodar os testes só no horário em que as pessoas trabalham deixa os avisos úteis e evita alarmes de madrugada sem ninguém para agir.</p>
+      <div class="evidence">
+        <p>O código e os dados são da empresa e não podem ser publicados. No meu projeto público, uma loja de demonstração tem 5 conferências separadas a cada 5 minutos, das 8h às 18h, no mesmo formato.</p>
+        <a class="btn" href="https://github.com/alvessq/qa-automation-portfolio/blob/main/apps/web-e2e/scripts/health.mjs">Ver projeto público</a>
+      </div>
+    </section>
+  </article>
+
+  <nav class="pager" aria-label="Outros cases">
+    <a href="painel.html"><span>← Case anterior</span>Painel único de acompanhamento dos testes</a>
+    <a class="next" href="po-auditoria.html"><span>Próximo case →</span>Product Owner do sistema de auditoria</a>
+  </nav>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Kevin Alves Quirino</span><span>Case descrito sem dados, nomes ou regras internas da empresa.</span></div>
+</footer>
+
+<script src="../assets/js/tema.js" defer></script>
+</body>
+</html>
