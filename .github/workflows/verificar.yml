@@ -1,0 +1,23 @@
+name: Verificar site
+
+# Confere, a cada mudança, se as páginas dos cases estão geradas a partir dos
+# dados e se nenhum link interno do site está quebrado.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm run verificar
