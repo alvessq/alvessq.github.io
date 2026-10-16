@@ -82,7 +82,7 @@ img.photo { display: block; height: auto; aspect-ratio: 1; max-width: 300px; bor
 .summary p { font-size: 0.8rem; color: var(--muted); }
 
 .facts { list-style: none; margin: 56px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
-.facts li { padding: 18px 20px; border-left: 1px solid var(--line); display: grid; gap: 4px; }
+.facts li { padding: 18px 20px; border-left: 1px solid var(--line); display: grid; gap: 4px; align-content: start; }
 .facts li:first-child { border-left: 0; }
 .facts b { font-size: 1.6rem; font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
 .facts span { font-size: 0.85rem; color: var(--muted); }

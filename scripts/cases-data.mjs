@@ -6,7 +6,7 @@ export default [
     sum: 'Criei os testes automáticos do aplicativo de crédito para pessoas, cobrindo as jornadas que o cliente mais usa.',
     card: [['5', 'jornadas automatizadas'], ['9', 'telas mapeadas']],
     role: 'Propus e construí', when: '2025–2026', tools: ['Appium', 'WebdriverIO', 'TypeScript'],
-    stats: [['5', 'jornadas do cliente automatizadas'], ['9', 'telas do app mapeadas para os testes'], ['24 de 28', 'localizadores pelo id do elemento, não pelo texto'], ['5', 'serviços conferidos um a um antes de abrir o app']],
+    stats: [['5', 'jornadas do cliente automatizadas'], ['9', 'telas do app mapeadas para os testes'], ['100%', 'dos elementos com id encontrados pelo id, não pelo texto'], ['5 min', 'entre cada conferência dos 5 serviços por trás do app']],
     context: ['Um aplicativo de crédito para pessoas, em que os testes no celular eram feitos à mão antes de cada versão.', 'Cada nova versão exigia alguém repetindo os mesmos passos: entrar no app, simular, escolher uma oferta e seguir até a contratação.'],
     challenge: 'Testar login, simulação e contratação sem depender de alguém repetindo os mesmos passos a cada entrega, e sem gerar contratos sem querer.',
     flowIntro: 'Primeiro os serviços por trás do app são conferidos um a um. Depois o teste segue a ordem em que o cliente usa o app:',
@@ -22,7 +22,7 @@ export default [
       ['Achei os elementos pelo id', 'O teste encontra botões e campos pelo identificador do elemento, que não muda quando o texto da tela muda. Texto só em avisos que não tinham id e nos diálogos do próprio Android.'],
       ['Separei em dois níveis', 'Um teste rápido confere o essencial. O completo passa pela simulação e pelas ofertas.'],
       ['Protegi a contratação', 'O teste que contrata só roda com confirmação de uma pessoa, para não gerar contratos sem querer.'],
-      ['Conferi os serviços primeiro', 'Antes de abrir o app, 5 serviços são conferidos separadamente: login com senha, login com código, propostas, ofertas e envio de SMS. Cada um dá o seu resultado, então dá para saber qual caiu.'],
+      ['Conferi os serviços primeiro', '5 serviços são conferidos separadamente durante o expediente: login com senha, login com código, propostas e ofertas a cada 5 minutos, e envio de SMS a cada 30. Cada um dá o seu resultado, então, se um cai, o time sabe em até 5 minutos qual foi.'],
       ['Guardei evidências', 'Cada execução grava vídeo e registros, para qualquer pessoa ver o que aconteceu.']
     ],
     before: ['Testes do app feitos à mão a cada versão', 'Mesmos passos repetidos por uma pessoa', 'Pouca evidência quando algo dava errado'],
@@ -63,9 +63,9 @@ export default [
   {
     id: 'triagem', kind: 'Qualidade', title: 'Separar bug de verdade de falha passageira', stText: 'Trabalho · dados protegidos',
     sum: 'Quando um teste falha, o sistema repete antes de avisar o time e só abre um chamado se o problema for real.',
-    card: [['3', 'repetições antes de avisar'], ['12', 'sinais de ambiente reconhecidos']],
+    card: [['3 bugs', 'barrados em homologação'], ['4 de 7', 'falhas filtradas antes de virar chamado']],
     role: 'Idealizei e construí', when: '2025–2026', tools: ['Node.js', 'Jira', 'Microsoft Teams'],
-    stats: [['3', 'repetições antes de virar chamado'], ['3', 'caminhos possíveis para uma falha'], ['12', 'sinais de problema de ambiente reconhecidos'], ['1', 'chamado por problema, sem duplicar']],
+    stats: [['3 bugs', 'confirmados e abertos no Jira com vídeo, ainda em homologação, antes de chegar ao cliente'], ['4 de 7', 'falhas filtradas antes de virar chamado: eram passageiras ou de ambiente'], ['3', 'repetições antes de virar chamado'], ['12', 'sinais de problema de ambiente reconhecidos']],
     context: ['Os testes do aplicativo rodavam várias vezes por dia num celular virtual. Testes em celular às vezes falham por instabilidade, e não por erro no app.', 'Cada falha virava um alerta. Muitos eram alarmes falsos, e cada um tirava alguém do que estava fazendo.'],
     challenge: 'Avisar rápido quando existe um problema real, sem incomodar o time com falhas passageiras e sem deixar um bug de verdade passar.',
     flowIntro: 'Quando um teste falha, o sistema tenta de novo antes de avisar alguém:',
@@ -83,7 +83,7 @@ export default [
       ['Mostrei tudo no painel', 'Cada repetição, com o resultado e o vídeo, aparece no painel do time.']
     ],
     before: ['Toda falha virava alerta', 'O time investigava alarmes falsos', 'Chamado aberto à mão, sem evidência'],
-    after: ['Só falha confirmada vira chamado', 'Falha passageira gera só um aviso curto', 'Chamado chega com vídeo e registros'],
+    after: ['Bugs barrados em homologação, antes do cliente', 'Só falha confirmada vira chamado', 'Falha passageira gera só um aviso curto', 'Chamado chega com vídeo e registros'],
     learn: 'Um alerta só ajuda quando as pessoas confiam nele. Avisar menos, e com mais certeza, fez mais diferença do que avisar tudo.',
     evidence: ['Refiz do zero, no meu projeto público, a triagem com 3 repetições, chamado sem duplicar e detecção de problema de ambiente. Lá o chamado é uma issue do GitHub, no lugar do Jira.', 'https://github.com/alvessq/qa-automation-portfolio/blob/main/apps/test-scheduler/src/triage.mjs']
   },
