@@ -103,7 +103,7 @@
       title: 'Testes que rodam sozinhos',
       out: 'Problemas encontrados antes do cliente',
       html:
-        '<p>Os testes rodam sozinhos num emulador Android (um celular simulado) na nuvem, em horários agendados:</p>' +
+        '<p>Os testes rodam sem ninguém repetir os passos à mão, no computador ou num emulador Android (um celular simulado) na nuvem:</p>' +
         '<ol class="flow"><li>A versão mais nova do app é baixada sozinha</li><li>Um emulador liga na nuvem e roda os testes</li><li>Cada execução guarda vídeo, prints e registros</li><li>O resultado aparece no painel do time</li></ol>',
     },
     {

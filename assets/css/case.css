@@ -61,7 +61,7 @@ article section > p { color: color-mix(in srgb, var(--ink) 88%, var(--muted)); m
 .fine { font-size: 0.82rem; color: var(--muted) !important; }
 
 /* números */
-.stats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.stats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
 @media (max-width: 680px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .stats li { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); padding: 16px; display: grid; gap: 6px; align-content: start; }
 .stats b { font-size: clamp(1.5rem, 3.4vw, 2rem); font-weight: 600; letter-spacing: -0.03em; line-height: 1.05; color: var(--accent); font-variant-numeric: tabular-nums; }

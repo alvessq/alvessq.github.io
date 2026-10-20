@@ -31,16 +31,16 @@ export default [
     evidence: ['A mesma abordagem, com localizadores por id, está no meu projeto público de testes de um app de compras.', 'https://github.com/alvessq/qa-automation-portfolio/tree/main/apps/mobile-e2e']
   },
   {
-    id: 'nuvem', kind: 'Qualidade', title: 'Testes do aplicativo rodando sozinhos na nuvem', stText: 'Trabalho · dados protegidos',
-    sum: 'Fiz os testes do app rodarem num emulador Android (um celular simulado) na nuvem, em horários agendados, sem ninguém precisar apertar um botão.',
-    card: [['5', 'testes do app rodando na nuvem'], ['14 dias', 'de vídeos e registros guardados']],
+    id: 'nuvem', kind: 'Qualidade', title: 'Testes do aplicativo rodando na nuvem', stText: 'Trabalho · dados protegidos',
+    sum: 'Fiz os testes do app rodarem num emulador Android (um celular simulado) na nuvem, disparados pelo painel com um clique, sem depender do computador de ninguém.',
+    card: [['10', 'testes do app rodando na nuvem'], ['4', 'formas de rodar']],
     role: 'Construí', when: '2025–2026', tools: ['GitHub Actions', 'Emulador Android', 'Appium'],
-    stats: [['5', 'testes do app que rodam na nuvem, um a um ou em suíte'], ['4', 'modos de execução: smoke, health, regressão e teste avulso'], ['14 dias', 'de vídeo, prints e registros de cada execução guardados'], ['Android 14', 'emulador na nuvem, sem depender do computador de ninguém']],
-    context: ['Os testes funcionavam no meu computador, mas o emulador da nuvem travava ao abrir o app.', 'Sem a nuvem, os testes só rodavam quando alguém lembrava de rodar.'],
+    stats: [['10', 'testes do app rodando na nuvem: 5 jornadas de ponta a ponta e 5 health checks'], ['4', 'formas de rodar: smoke, regressão, health check ou um teste específico']],
+    context: ['Os testes funcionavam no meu computador, mas o emulador da nuvem travava ao abrir o app.', 'Sem a nuvem, os testes só rodavam no computador de quem tinha o emulador configurado.'],
     challenge: 'Descobrir por que o mesmo teste passava na minha máquina e falhava na nuvem, sem gastar horas de execução tentando no escuro.',
-    flowIntro: 'Do horário agendado até o resultado no painel:',
+    flowIntro: 'Do disparo até o resultado no painel:',
     flow: [
-      [['Agenda', 'smoke a cada 6 horas · regressão de madrugada', 'accent']],
+      [['Disparo pelo painel', 'smoke, regressão, health check ou um teste específico', 'accent']],
       [['Baixa a versão mais nova do app']],
       [['Emulador Android na nuvem', 'Android 14'], ['Modo local que imita a nuvem', 'para investigar sem custo']],
       [['Roda os testes', 'com vídeo montado a partir de prints a cada 10 s']],
@@ -55,8 +55,8 @@ export default [
       ['Reiniciei o emulador de tempos em tempos', 'No computador, o emulador é reiniciado a cada 3 execuções, sem apagar os dados, para não travar em sessões longas.'],
       ['Montei o vídeo por conta própria', 'Na nuvem, a gravação do Appium podia travar quando o emulador caía. Passei a montar o vídeo com prints da tela a cada 10 segundos, e cada execução guarda vídeo, prints e registros por 14 dias. No computador, a tela é gravada direto e ficam os 3 vídeos mais recentes.']
     ],
-    before: ['Testes rodavam só quando alguém lembrava', 'O emulador travava na nuvem', 'Investigar custava horas de execução', 'Preparar o computador era manual'],
-    after: ['Rodam sozinhos em horários fixos', 'Emulador estável', 'Problema investigado no meu computador', 'App e emulador prontos ao abrir o painel'],
+    before: ['Testes só rodavam no computador de quem tinha o ambiente', 'O emulador travava na nuvem', 'Investigar custava horas de execução', 'Preparar o computador era manual'],
+    after: ['Rodam na nuvem com um clique, de onde o time estiver', 'Emulador estável', 'Problema investigado no meu computador', 'App e emulador prontos ao abrir o painel'],
     learn: 'Reproduzir o problema perto de mim foi mais rápido do que tentar adivinhar o que acontecia lá longe.',
     evidence: ['Refiz do zero, no meu projeto público, o modo que imita a nuvem, a parada rápida quando o emulador cai, a reinicialização a cada 3 suítes e o preparo automático do app e do emulador.', 'https://github.com/alvessq/qa-automation-portfolio/tree/main/apps/mobile-e2e/scripts']
   },

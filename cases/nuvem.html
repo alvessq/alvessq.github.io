@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Testes do aplicativo rodando sozinhos na nuvem · Kevin Quirino</title>
-<meta name="description" content="Fiz os testes do app rodarem num emulador Android (um celular simulado) na nuvem, em horários agendados, sem ninguém precisar apertar um botão.">
+<title>Testes do aplicativo rodando na nuvem · Kevin Quirino</title>
+<meta name="description" content="Fiz os testes do app rodarem num emulador Android (um celular simulado) na nuvem, disparados pelo painel com um clique, sem depender do computador de ninguém.">
 <link rel="canonical" href="https://alvessq.github.io/cases/nuvem.html">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:url" content="https://alvessq.github.io/cases/nuvem.html">
-<meta property="og:title" content="Testes do aplicativo rodando sozinhos na nuvem">
-<meta property="og:description" content="Fiz os testes do app rodarem num emulador Android (um celular simulado) na nuvem, em horários agendados, sem ninguém precisar apertar um botão.">
+<meta property="og:title" content="Testes do aplicativo rodando na nuvem">
+<meta property="og:description" content="Fiz os testes do app rodarem num emulador Android (um celular simulado) na nuvem, disparados pelo painel com um clique, sem depender do computador de ninguém.">
 <meta property="og:image" content="https://alvessq.github.io/assets/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0A0D12">
@@ -33,8 +33,8 @@
 <main class="wrap">
   <div class="intro">
     <p class="kicker">Projeto de Qualidade · Trabalho</p>
-    <h1>Testes do aplicativo rodando sozinhos na nuvem</h1>
-    <p class="lede">Fiz os testes do app rodarem num emulador Android (um celular simulado) na nuvem, em horários agendados, sem ninguém precisar apertar um botão.</p>
+    <h1>Testes do aplicativo rodando na nuvem</h1>
+    <p class="lede">Fiz os testes do app rodarem num emulador Android (um celular simulado) na nuvem, disparados pelo painel com um clique, sem depender do computador de ninguém.</p>
     <dl class="facts">
       <div><dt>Onde</dt><dd>Teddy Open Finance</dd></div>
       <div><dt>Meu papel</dt><dd>Construí</dd></div>
@@ -55,10 +55,8 @@
     <section id="numeros">
       <h2>Em números</h2>
       <ul class="stats">
-        <li><b>5</b><span>testes do app que rodam na nuvem, um a um ou em suíte</span></li>
-        <li><b>4</b><span>modos de execução: smoke, health, regressão e teste avulso</span></li>
-        <li><b>14 dias</b><span>de vídeo, prints e registros de cada execução guardados</span></li>
-        <li><b>Android 14</b><span>emulador na nuvem, sem depender do computador de ninguém</span></li>
+        <li><b>10</b><span>testes do app rodando na nuvem: 5 jornadas de ponta a ponta e 5 health checks</span></li>
+        <li><b>4</b><span>formas de rodar: smoke, regressão, health check ou um teste específico</span></li>
       </ul>
       <p class="fine">Números tirados da configuração, do código e dos registros de execução do projeto. Nenhum dado de cliente ou de negócio.</p>
     </section>
@@ -66,16 +64,16 @@
     <section id="contexto">
       <h2>Contexto</h2>
       <p>Os testes funcionavam no meu computador, mas o emulador da nuvem travava ao abrir o app.</p>
-      <p>Sem a nuvem, os testes só rodavam quando alguém lembrava de rodar.</p>
+      <p>Sem a nuvem, os testes só rodavam no computador de quem tinha o emulador configurado.</p>
       <h3 class="sub">O desafio</h3>
       <p>Descobrir por que o mesmo teste passava na minha máquina e falhava na nuvem, sem gastar horas de execução tentando no escuro.</p>
     </section>
 
     <section id="como-funciona">
       <h2>Como funciona</h2>
-      <p>Do horário agendado até o resultado no painel:</p>
-      <div class="flow" role="img" aria-label="Diagrama: Agenda, depois Baixa a versão mais nova do app, depois Emulador Android na nuvem e Modo local que imita a nuvem, depois Roda os testes, depois Vídeo, prints e registros e Painel do time">
-        <div class="level"><div class="fnode t-accent"><b>Agenda</b><span>smoke a cada 6 horas · regressão de madrugada</span></div></div>
+      <p>Do disparo até o resultado no painel:</p>
+      <div class="flow" role="img" aria-label="Diagrama: Disparo pelo painel, depois Baixa a versão mais nova do app, depois Emulador Android na nuvem e Modo local que imita a nuvem, depois Roda os testes, depois Vídeo, prints e registros e Painel do time">
+        <div class="level"><div class="fnode t-accent"><b>Disparo pelo painel</b><span>smoke, regressão, health check ou um teste específico</span></div></div>
         <div class="level"><div class="fnode"><b>Baixa a versão mais nova do app</b></div></div>
         <div class="level multi"><div class="fnode"><b>Emulador Android na nuvem</b><span>Android 14</span></div><div class="fnode"><b>Modo local que imita a nuvem</b><span>para investigar sem custo</span></div></div>
         <div class="level"><div class="fnode"><b>Roda os testes</b><span>com vídeo montado a partir de prints a cada 10 s</span></div></div>
@@ -99,8 +97,8 @@
     <section id="antes-depois">
       <h2>Antes e depois</h2>
       <div class="compare">
-        <div class="col"><h3>Antes</h3><ul><li>Testes rodavam só quando alguém lembrava</li><li>O emulador travava na nuvem</li><li>Investigar custava horas de execução</li><li>Preparar o computador era manual</li></ul></div>
-        <div class="col after"><h3>Depois</h3><ul><li>Rodam sozinhos em horários fixos</li><li>Emulador estável</li><li>Problema investigado no meu computador</li><li>App e emulador prontos ao abrir o painel</li></ul></div>
+        <div class="col"><h3>Antes</h3><ul><li>Testes só rodavam no computador de quem tinha o ambiente</li><li>O emulador travava na nuvem</li><li>Investigar custava horas de execução</li><li>Preparar o computador era manual</li></ul></div>
+        <div class="col after"><h3>Depois</h3><ul><li>Rodam na nuvem com um clique, de onde o time estiver</li><li>Emulador estável</li><li>Problema investigado no meu computador</li><li>App e emulador prontos ao abrir o painel</li></ul></div>
       </div>
     </section>
 
