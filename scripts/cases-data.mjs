@@ -64,7 +64,7 @@ export default [
   },
   {
     id: 'triagem', kind: 'Qualidade', title: 'Separar bug de verdade de falha passageira', stText: 'Trabalho · dados protegidos',
-    sum: 'Quando um teste falha, o sistema repete antes de avisar o time e só abre um chamado se o problema for real.',
+    sum: 'Quando um teste do app falha no computador, o sistema repete antes de avisar o time e só abre um chamado se o problema for real.',
     card: [['3 bugs', 'barrados em homologação'], ['4', 'alarmes falsos evitados']],
     role: 'Idealizei e construí', when: '2025–2026', tools: ['Node.js', 'Retry', 'Testes flaky', 'Jira', 'Microsoft Teams'],
     stats: [['3 bugs', 'confirmados e abertos no Jira com vídeo, ainda em homologação: nenhum bug real foi ignorado'], ['4', 'alarmes falsos evitados: 2 falhas passageiras e 2 do emulador, conferidas de novo antes de chamar o time'], ['3', 'repetições antes de virar chamado'], ['12', 'sinais de problema de ambiente reconhecidos']],
@@ -91,10 +91,10 @@ export default [
   },
   {
     id: 'painel', kind: 'Qualidade', title: 'Painel único de acompanhamento dos testes', stText: 'Trabalho · dados protegidos',
-    sum: 'Evoluí, junto com o time, um painel que mostra num lugar só os resultados, a agenda e os vídeos dos testes.',
-    card: [['3', 'frentes num painel só'], ['22', 'passos explicados em português']],
+    sum: 'Evoluí, junto com o time, um painel para rodar, agendar e acompanhar num lugar só os testes do app, no computador e na nuvem, e os da auditoria.',
+    card: [['3', 'frentes num painel só'], ['13', 'testes acompanhados']],
     role: 'Evoluí junto com o time', when: '2025–2026', tools: ['Dashboard', 'React', 'Node.js', 'GitHub Actions'],
-    stats: [['3', 'frentes num painel só: computador, nuvem e auditoria'], ['22', 'passos de teste explicados em português'], ['14', 'configurações conferidas ao abrir o painel'], ['0', 'testes do aplicativo rodando sem alguém decidir']],
+    stats: [['3', 'frentes num painel só: app no computador, app na nuvem e auditoria'], ['13', 'testes acompanhados: 7 de ponta a ponta e 6 health checks'], ['0', 'testes do aplicativo rodando sem alguém decidir']],
     context: ['Os resultados ficavam espalhados entre o computador de quem rodou, a nuvem e as mensagens do time.', 'Quem não era da área técnica não tinha como saber, sozinho, como os testes estavam.'],
     challenge: 'Dar a qualquer pessoa do time uma forma simples de ver como estão os testes, sem precisar entender as ferramentas por trás.',
     flowIntro: 'Tudo o que roda, em qualquer lugar, chega no mesmo painel:',
@@ -111,7 +111,7 @@ export default [
       ['Juntei a auditoria', 'Os testes do sistema de auditoria ganharam uma área própria dentro do mesmo painel.'],
       ['Traduzi os testes', 'Cada passo do teste aparece em português, para quem não lê código entender o que foi testado.'],
       ['Comecei seguro', 'Ao abrir, os testes do aplicativo ficam pausados. Nada roda sem alguém decidir.'],
-      ['Avisei o que falta', 'Na abertura, o painel lista 14 configurações e avisa quais estão faltando, sem mostrar nenhuma senha.']
+      ['Avisei o que falta', 'Na abertura, o painel confere as configurações e avisa quais estão faltando, sem mostrar nenhuma senha.']
     ],
     before: ['Resultados espalhados em vários lugares', 'Só quem rodou sabia o que aconteceu', 'Execuções da nuvem disparadas fora do painel', 'Configurações faltando só apareciam como erro'],
     after: ['Tudo num painel só', 'Passo a passo em português para o time todo', 'Nuvem disparada e agendada pelo painel', 'O painel avisa o que falta logo ao abrir'],
@@ -120,21 +120,21 @@ export default [
   },
   {
     id: 'auditoria', kind: 'Qualidade', title: 'Monitoramento de um sistema de auditoria', stText: 'Trabalho · dados protegidos',
-    sum: 'Testes que entram sozinhos num sistema web de auditoria de propostas de crédito e conferem, ao longo do dia, se ele continua funcionando.',
-    card: [['5 min', 'entre cada conferência'], ['120', 'conferências por dia']],
+    sum: 'Testes que entram sozinhos num sistema web de auditoria de propostas de crédito e conferem, ao longo do dia, se ele continua funcionando. Rodam no computador, pelo mesmo painel dos testes do app.',
+    card: [['3', 'testes rodando no computador, pelo painel'], ['120', 'conferências de saúde por dia']],
     role: 'Construí', when: '2025–2026', tools: ['Playwright', 'TypeScript', 'Node.js'],
-    stats: [['5 min', 'entre cada conferência do sistema'], ['120', 'conferências por dia útil'], ['10 h', 'por dia de monitoramento, das 8h às 18h'], ['1 h', 'entre cada teste de montagem das filas']],
+    stats: [['3', 'testes: 2 de ponta a ponta, na montagem das filas, e 1 health check'], ['120', 'conferências de saúde por dia útil'], ['8h às 18h', 'monitoramento durante o expediente, quando a equipe usa o sistema']],
     context: ['Um sistema web em que a equipe audita propostas de crédito, organizadas em filas de trabalho que o próprio sistema monta.', 'Se o sistema saísse do ar ou parasse de montar as filas, a equipe só descobria quando tentava trabalhar.'],
     challenge: 'Saber durante o expediente se o sistema está no ar e se as filas continuam sendo montadas, sem alguém precisar entrar para conferir.',
     flowIntro: 'Durante o expediente, duas verificações rodam em paralelo:',
     flow: [
-      [['Agenda do horário comercial', 'das 8h às 18h', 'accent']],
-      [['Conferência rápida', 'a cada 5 minutos: o sistema responde?'], ['Teste completo', 'a cada 1 hora: as filas são montadas?']],
+      [['No computador, pelo painel', 'das 8h às 18h', 'accent']],
+      [['Health check', 'a cada 5 minutos: o sistema responde?'], ['Montagem das filas', 'propostas alteradas a cada 1 h e todas a cada 2 h']],
       [['Histórico e vídeos', '', 'pass'], ['Painel do time', '', 'pass'], ['Jira', '', 'pass']]
     ],
     did: [
       ['Criei a conferência rápida', 'A cada 5 minutos, um teste checa se o sistema responde.'],
-      ['Testei o que importa', 'Um teste entra no sistema, pede para montar as filas de propostas e confere a mensagem de confirmação.'],
+      ['Testei o que importa', 'Dois testes entram no sistema, pedem para montar as filas, uma só com as propostas alteradas e outra com todas, e conferem a mensagem de confirmação.'],
       ['Respeitei o expediente', 'Os testes rodam das 8h às 18h, quando a equipe usa o sistema.'],
       ['Montei a agenda', 'Fila, histórico, vídeos e controles para rodar, parar e editar cada teste.'],
       ['Liguei ao resto', 'A agenda usa o mesmo painel e o mesmo Jira dos testes do aplicativo.']

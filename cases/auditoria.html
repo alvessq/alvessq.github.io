@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Monitoramento de um sistema de auditoria · Kevin Quirino</title>
-<meta name="description" content="Testes que entram sozinhos num sistema web de auditoria de propostas de crédito e conferem, ao longo do dia, se ele continua funcionando.">
+<meta name="description" content="Testes que entram sozinhos num sistema web de auditoria de propostas de crédito e conferem, ao longo do dia, se ele continua funcionando. Rodam no computador, pelo mesmo painel dos testes do app.">
 <link rel="canonical" href="https://alvessq.github.io/cases/auditoria.html">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:url" content="https://alvessq.github.io/cases/auditoria.html">
 <meta property="og:title" content="Monitoramento de um sistema de auditoria">
-<meta property="og:description" content="Testes que entram sozinhos num sistema web de auditoria de propostas de crédito e conferem, ao longo do dia, se ele continua funcionando.">
+<meta property="og:description" content="Testes que entram sozinhos num sistema web de auditoria de propostas de crédito e conferem, ao longo do dia, se ele continua funcionando. Rodam no computador, pelo mesmo painel dos testes do app.">
 <meta property="og:image" content="https://alvessq.github.io/assets/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0A0D12">
@@ -34,7 +34,7 @@
   <div class="intro">
     <p class="kicker">Projeto de Qualidade · Trabalho</p>
     <h1>Monitoramento de um sistema de auditoria</h1>
-    <p class="lede">Testes que entram sozinhos num sistema web de auditoria de propostas de crédito e conferem, ao longo do dia, se ele continua funcionando.</p>
+    <p class="lede">Testes que entram sozinhos num sistema web de auditoria de propostas de crédito e conferem, ao longo do dia, se ele continua funcionando. Rodam no computador, pelo mesmo painel dos testes do app.</p>
     <dl class="facts">
       <div><dt>Onde</dt><dd>Teddy Open Finance</dd></div>
       <div><dt>Meu papel</dt><dd>Construí</dd></div>
@@ -55,10 +55,9 @@
     <section id="numeros">
       <h2>Em números</h2>
       <ul class="stats">
-        <li><b>5 min</b><span>entre cada conferência do sistema</span></li>
-        <li><b>120</b><span>conferências por dia útil</span></li>
-        <li><b>10 h</b><span>por dia de monitoramento, das 8h às 18h</span></li>
-        <li><b>1 h</b><span>entre cada teste de montagem das filas</span></li>
+        <li><b>3</b><span>testes: 2 de ponta a ponta, na montagem das filas, e 1 health check</span></li>
+        <li><b>120</b><span>conferências de saúde por dia útil</span></li>
+        <li><b>8h às 18h</b><span>monitoramento durante o expediente, quando a equipe usa o sistema</span></li>
       </ul>
       <p class="fine">Números tirados da configuração, do código e dos registros de execução do projeto. Nenhum dado de cliente ou de negócio.</p>
     </section>
@@ -74,9 +73,9 @@
     <section id="como-funciona">
       <h2>Como funciona</h2>
       <p>Durante o expediente, duas verificações rodam em paralelo:</p>
-      <div class="flow" role="img" aria-label="Diagrama: Agenda do horário comercial, depois Conferência rápida e Teste completo, depois Histórico e vídeos e Painel do time e Jira">
-        <div class="level"><div class="fnode t-accent"><b>Agenda do horário comercial</b><span>das 8h às 18h</span></div></div>
-        <div class="level multi"><div class="fnode"><b>Conferência rápida</b><span>a cada 5 minutos: o sistema responde?</span></div><div class="fnode"><b>Teste completo</b><span>a cada 1 hora: as filas são montadas?</span></div></div>
+      <div class="flow" role="img" aria-label="Diagrama: No computador, pelo painel, depois Health check e Montagem das filas, depois Histórico e vídeos e Painel do time e Jira">
+        <div class="level"><div class="fnode t-accent"><b>No computador, pelo painel</b><span>das 8h às 18h</span></div></div>
+        <div class="level multi"><div class="fnode"><b>Health check</b><span>a cada 5 minutos: o sistema responde?</span></div><div class="fnode"><b>Montagem das filas</b><span>propostas alteradas a cada 1 h e todas a cada 2 h</span></div></div>
         <div class="level multi"><div class="fnode t-pass"><b>Histórico e vídeos</b></div><div class="fnode t-pass"><b>Painel do time</b></div><div class="fnode t-pass"><b>Jira</b></div></div>
       </div>
     </section>
@@ -85,7 +84,7 @@
       <h2>O que eu fiz</h2>
       <ul class="did">
         <li><b>Criei a conferência rápida</b><span>A cada 5 minutos, um teste checa se o sistema responde.</span></li>
-        <li><b>Testei o que importa</b><span>Um teste entra no sistema, pede para montar as filas de propostas e confere a mensagem de confirmação.</span></li>
+        <li><b>Testei o que importa</b><span>Dois testes entram no sistema, pedem para montar as filas, uma só com as propostas alteradas e outra com todas, e conferem a mensagem de confirmação.</span></li>
         <li><b>Respeitei o expediente</b><span>Os testes rodam das 8h às 18h, quando a equipe usa o sistema.</span></li>
         <li><b>Montei a agenda</b><span>Fila, histórico, vídeos e controles para rodar, parar e editar cada teste.</span></li>
         <li><b>Liguei ao resto</b><span>A agenda usa o mesmo painel e o mesmo Jira dos testes do aplicativo.</span></li>
