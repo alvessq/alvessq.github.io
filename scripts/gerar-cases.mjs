@@ -64,7 +64,7 @@ function casePage(c, i) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>${esc(c.title)} · Kevin Quirino</title>
+<title>${esc(c.title)} · Kevin Alves Quirino</title>
 <meta name="description" content="${esc(c.sum)}">
 <link rel="canonical" href="${url}">
 <meta property="og:type" content="article">
@@ -86,7 +86,7 @@ function casePage(c, i) {
 <header class="top">
   <div class="wrap">
     <a class="back" href="../#cases">← Voltar para os projetos</a>
-    <a class="brand" href="../">Kevin Quirino</a>
+    <a class="brand" href="../">Kevin Alves Quirino</a>
     <button class="small-btn" id="theme-btn" type="button" aria-pressed="false">Tema claro</button>
   </div>
 </header>
