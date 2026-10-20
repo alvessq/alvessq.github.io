@@ -35,6 +35,14 @@ const PUBLIC = [
   },
   {
     kind: 'Qualidade',
+    title: 'Projeto público: testes de API',
+    sum: 'Testes de uma API pública de loja que conferem status, contrato de cada resposta e regras de negócio, com um health check por serviço antes de tudo.',
+    card: [['26', 'testes automáticos'], ['63', 'verificações na coleção do Postman']],
+    tools: ['Playwright', 'Postman', 'JSON Schema', 'TypeScript'],
+    repo: 'https://github.com/alvessq/api-tests',
+  },
+  {
+    kind: 'Qualidade',
     title: 'Projeto público: painel de testes',
     sum: 'O painel que agenda, roda e acompanha os testes do app e do site, refeito do zero com o mesmo desenho do que uso no trabalho.',
     card: [['3', 'abas: no computador, na nuvem e chamados'], ['1', 'fila única para todos os testes']],
