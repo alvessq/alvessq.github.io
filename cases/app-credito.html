@@ -39,7 +39,7 @@
       <div><dt>Onde</dt><dd>Teddy Open Finance</dd></div>
       <div><dt>Meu papel</dt><dd>Propus e construí</dd></div>
       <div><dt>Quando</dt><dd>2025–2026</dd></div>
-      <div><dt>Ferramentas</dt><dd>Appium, WebdriverIO, TypeScript</dd></div>
+      <div><dt>Ferramentas</dt><dd>Appium, WebdriverIO, TypeScript, Testes de API</dd></div>
     </dl>
     <ul class="toc" aria-label="Nesta página">
       <li><a href="#numeros">Números</a></li>
@@ -92,7 +92,7 @@
         <li><b>Achei os elementos pelo id</b><span>O teste encontra botões e campos pelo identificador do elemento, que não muda quando o texto da tela muda. Texto só em avisos que não tinham id e nos diálogos do próprio Android.</span></li>
         <li><b>Separei em dois níveis</b><span>Um teste rápido confere o essencial. O completo passa pela simulação e pelas ofertas.</span></li>
         <li><b>Protegi a contratação</b><span>O teste que contrata só roda com confirmação de uma pessoa, para não gerar contratos sem querer.</span></li>
-        <li><b>Conferi os serviços primeiro</b><span>5 serviços são conferidos separadamente durante o expediente: login com senha, login com código, propostas e ofertas a cada 5 minutos, e envio de SMS a cada 30. Cada um dá o seu resultado, então, se um cai, o time sabe em até 5 minutos qual foi.</span></li>
+        <li><b>Conferi os serviços primeiro</b><span>5 serviços são conferidos separadamente durante o expediente: login com senha, login com código, propostas e ofertas a cada 5 minutos, e envio de SMS a cada 30. Cada conferência é um teste de API: faz a chamada ao serviço e confere a resposta. Cada um dá o seu resultado, então, se um cai, o time sabe em até 5 minutos qual foi.</span></li>
         <li><b>Guardei evidências</b><span>Cada execução grava vídeo e registros, para qualquer pessoa ver o que aconteceu.</span></li>
       </ul>
     </section>

@@ -5,7 +5,7 @@ export default [
     id: 'app-credito', kind: 'Qualidade', title: 'Testes automáticos de um app de crédito', stText: 'Trabalho · dados protegidos',
     sum: 'Criei os testes automáticos do aplicativo de crédito para pessoas, cobrindo as jornadas que o cliente mais usa. Os mesmos testes rodam no computador, com agenda própria, e na nuvem, pelo GitHub.',
     card: [['5', 'jornadas automatizadas'], ['2', 'lugares para rodar: computador e nuvem']],
-    role: 'Propus e construí', when: '2025–2026', tools: ['Appium', 'WebdriverIO', 'TypeScript'],
+    role: 'Propus e construí', when: '2025–2026', tools: ['Appium', 'WebdriverIO', 'TypeScript', 'Testes de API'],
     stats: [['5', 'jornadas do cliente automatizadas, do login à contratação'], ['5', 'serviços por trás do app conferidos um a um (health checks)'], ['2', 'lugares para rodar os mesmos testes: computador e nuvem (GitHub)'], ['100%', 'dos elementos com id encontrados pelo id, não pelo texto']],
     context: ['Um aplicativo de crédito para pessoas, em que os testes do aplicativo eram feitos à mão antes de cada versão.', 'Cada nova versão exigia alguém repetindo os mesmos passos: entrar no app, simular, escolher uma oferta e seguir até a contratação.'],
     challenge: 'Testar login, simulação e contratação sem depender de alguém repetindo os mesmos passos a cada entrega, e sem gerar contratos sem querer.',
@@ -24,7 +24,7 @@ export default [
       ['Achei os elementos pelo id', 'O teste encontra botões e campos pelo identificador do elemento, que não muda quando o texto da tela muda. Texto só em avisos que não tinham id e nos diálogos do próprio Android.'],
       ['Separei em dois níveis', 'Um teste rápido confere o essencial. O completo passa pela simulação e pelas ofertas.'],
       ['Protegi a contratação', 'O teste que contrata só roda com confirmação de uma pessoa, para não gerar contratos sem querer.'],
-      ['Conferi os serviços primeiro', '5 serviços são conferidos separadamente durante o expediente: login com senha, login com código, propostas e ofertas a cada 5 minutos, e envio de SMS a cada 30. Cada um dá o seu resultado, então, se um cai, o time sabe em até 5 minutos qual foi.'],
+      ['Conferi os serviços primeiro', '5 serviços são conferidos separadamente durante o expediente: login com senha, login com código, propostas e ofertas a cada 5 minutos, e envio de SMS a cada 30. Cada conferência é um teste de API: faz a chamada ao serviço e confere a resposta. Cada um dá o seu resultado, então, se um cai, o time sabe em até 5 minutos qual foi.'],
       ['Guardei evidências', 'Cada execução grava vídeo e registros, para qualquer pessoa ver o que aconteceu.']
     ],
     before: ['Testes do app feitos à mão a cada versão', 'Mesmos passos repetidos por uma pessoa', 'Pouca evidência quando algo dava errado'],
@@ -36,9 +36,9 @@ export default [
     id: 'nuvem', kind: 'Qualidade', title: 'Testes do aplicativo rodando na nuvem', stText: 'Trabalho · dados protegidos',
     sum: 'Fiz os testes do app rodarem num emulador Android (um celular simulado) na nuvem, disparados pelo painel com um clique, sem depender do computador de ninguém.',
     card: [['10', 'testes do app rodando na nuvem'], ['4', 'formas de rodar']],
-    role: 'Construí', when: '2025–2026', tools: ['GitHub Actions', 'Emulador Android', 'Appium'],
+    role: 'Construí', when: '2025–2026', tools: ['CI com GitHub Actions', 'Emulador Android', 'Appium'],
     stats: [['10', 'testes do app rodando na nuvem: 5 jornadas de ponta a ponta e 5 health checks'], ['4', 'formas de rodar: smoke, regressão, health check ou um teste específico']],
-    context: ['Os testes funcionavam no meu computador, mas o emulador da nuvem travava ao abrir o app.', 'Sem a nuvem, os testes só rodavam no computador de quem tinha o emulador configurado.'],
+    context: ['Os testes funcionavam no meu computador, mas, na esteira de CI do GitHub Actions, o emulador travava ao abrir o app.', 'Sem a nuvem, os testes só rodavam no computador de quem tinha o emulador configurado.'],
     challenge: 'Descobrir por que o mesmo teste passava na minha máquina e falhava na nuvem, sem gastar horas de execução tentando no escuro.',
     flowIntro: 'Do disparo até o resultado no painel:',
     flow: [
@@ -66,7 +66,7 @@ export default [
     id: 'triagem', kind: 'Qualidade', title: 'Separar bug de verdade de falha passageira', stText: 'Trabalho · dados protegidos',
     sum: 'Quando um teste falha, o sistema repete antes de avisar o time e só abre um chamado se o problema for real.',
     card: [['3 bugs', 'barrados em homologação'], ['4', 'alarmes falsos evitados']],
-    role: 'Idealizei e construí', when: '2025–2026', tools: ['Node.js', 'Jira', 'Microsoft Teams'],
+    role: 'Idealizei e construí', when: '2025–2026', tools: ['Node.js', 'Retry', 'Testes flaky', 'Jira', 'Microsoft Teams'],
     stats: [['3 bugs', 'confirmados e abertos no Jira com vídeo, ainda em homologação: nenhum bug real foi ignorado'], ['4', 'alarmes falsos evitados: 2 falhas passageiras e 2 do emulador, conferidas de novo antes de chamar o time'], ['3', 'repetições antes de virar chamado'], ['12', 'sinais de problema de ambiente reconhecidos']],
     context: ['Os testes do aplicativo rodavam várias vezes por dia num emulador Android (um celular simulado). Testes de aplicativo às vezes falham por instabilidade, e não por erro no app.', 'Cada falha virava um alerta. Muitos eram alarmes falsos, e cada um tirava alguém do que estava fazendo.'],
     challenge: 'Avisar rápido quando existe um problema real, sem incomodar o time com falhas passageiras e sem deixar um bug de verdade passar.',
@@ -78,7 +78,7 @@ export default [
       [['Painel do time', 'mostra cada repetição e o vídeo', 'pass']]
     ],
     did: [
-      ['Defini a regra das 3 repetições', 'Uma falha só vira bug quando se repete. Uma única falha não basta para chamar o time.'],
+      ['Defini a regra das 3 repetições', 'Uma falha só vira bug quando se repete em todas as repetições (retry). Se passa em alguma, é um teste instável (flaky), e uma única falha não basta para chamar o time.'],
       ['Liguei os testes ao Jira', 'O chamado já nasce com vídeo, registros e o passo em que o teste parou.'],
       ['Evitei chamados duplicados', 'Antes de abrir um chamado, o sistema procura se já existe um aberto para o mesmo problema.'],
       ['Reconheci problemas de ambiente', '12 tipos de mensagem de emulador desligado ou travado são tratados como ambiente, não como bug.'],
@@ -93,7 +93,7 @@ export default [
     id: 'painel', kind: 'Qualidade', title: 'Painel único de acompanhamento dos testes', stText: 'Trabalho · dados protegidos',
     sum: 'Evoluí, junto com o time, um painel que mostra num lugar só os resultados, a agenda e os vídeos dos testes.',
     card: [['3', 'frentes num painel só'], ['22', 'passos explicados em português']],
-    role: 'Evoluí junto com o time', when: '2025–2026', tools: ['React', 'Node.js', 'GitHub Actions'],
+    role: 'Evoluí junto com o time', when: '2025–2026', tools: ['Dashboard', 'React', 'Node.js', 'GitHub Actions'],
     stats: [['3', 'frentes num painel só: computador, nuvem e auditoria'], ['22', 'passos de teste explicados em português'], ['14', 'configurações conferidas ao abrir o painel'], ['0', 'testes do aplicativo rodando sem alguém decidir']],
     context: ['Os resultados ficavam espalhados entre o computador de quem rodou, a nuvem e as mensagens do time.', 'Quem não era da área técnica não tinha como saber, sozinho, como os testes estavam.'],
     challenge: 'Dar a qualquer pessoa do time uma forma simples de ver como estão os testes, sem precisar entender as ferramentas por trás.',
@@ -104,7 +104,7 @@ export default [
       [['Resultados e vídeos', '', 'pass'], ['Agenda por teste', 'intervalo e horário próprios', 'pass'], ['Nuvem pelo painel', 'disparar e agendar execuções', 'pass'], ['Passo a passo', 'cada teste contado em português', 'pass']]
     ],
     did: [
-      ['Reuni os resultados', 'Resultados, vídeos e registros de cada execução, do computador e da nuvem, num lugar só.'],
+      ['Reuni os resultados', 'Um dashboard com resultados, vídeos e registros de cada execução, do computador e da nuvem, num lugar só.'],
       ['Dei controle ao time', 'Dá para agendar, iniciar, parar, editar e reordenar os testes pelo próprio painel.'],
       ['Agenda própria para cada teste', 'Cada teste tem seu intervalo e seu horário de funcionamento. A edição é feita direto na lista, a exclusão pede confirmação e o painel conta as execuções.'],
       ['Liguei o painel à nuvem', 'Pelo painel dá para disparar as execuções da nuvem e mudar os horários em que elas rodam.'],
@@ -176,7 +176,7 @@ export default [
     id: 'proposta', kind: 'Produto', title: 'Como propus a automação de testes do aplicativo', stText: 'Trabalho · dados protegidos',
     sum: 'Como mostrei o valor de automatizar os testes do aplicativo antes de pedir tempo ao time.',
     card: [['Do zero', 'até a primeira versão'], ['3', 'projetos que vieram depois']],
-    role: 'Propus e construí', when: '2025–2026', tools: ['Visão de produto', 'Appium'],
+    role: 'Propus e construí', when: '2025–2026', tools: ['Visão de produto', 'Prova de conceito (PoC)', 'Appium'],
     stats: [['0 → 1', 'da ideia à primeira suíte automatizada'], ['3', 'projetos construídos em cima dela: nuvem, triagem e painel'], ['1', 'escopo pequeno para começar'], ['App', 'financeiro para pessoas']],
     context: ['Um aplicativo financeiro em que todos os testes do aplicativo eram feitos à mão.'],
     challenge: 'Convencer o time de que valia a pena investir em automação, sem pedir um projeto grande logo de cara.',
@@ -190,7 +190,7 @@ export default [
     did: [
       ['Mapeei o que importa', 'Levantei os caminhos mais importantes do app e quanto tempo os testes manuais levavam.'],
       ['Propus começar pequeno', 'Uma primeira versão com escopo reduzido e resultado fácil de medir.'],
-      ['Construí a primeira versão', 'Os primeiros testes automáticos do app, com Appium.'],
+      ['Construí a primeira versão', 'Comecei com uma prova de conceito (PoC) com Appium, para mostrar na prática que a automação funcionava no app, e dela saíram os primeiros testes automáticos.'],
       ['Usei como base', 'Em cima dela vieram os testes na nuvem, a triagem de falhas e o painel.']
     ],
     before: ['Todos os testes do aplicativo feitos à mão', 'Automação vista como custo'],
