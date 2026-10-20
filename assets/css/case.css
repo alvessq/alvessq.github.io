@@ -74,7 +74,7 @@ article section > p { color: color-mix(in srgb, var(--ink) 88%, var(--muted)); m
 .level + .level::before { content: ""; position: absolute; left: 50%; top: -30px; height: 22px; width: 1.5px; background: var(--muted); transform: translateX(-50%); }
 .level + .level::after { content: ""; position: absolute; left: 50%; top: -11px; transform: translateX(-50%); border: 5px solid transparent; border-top-color: var(--muted); }
 .level.multi { padding-top: 0; }
-.fnode { --c: var(--line); flex: 1 1 0; min-width: 150px; max-width: 250px; border: 1px solid var(--line); border-top: 3px solid var(--c); border-radius: 12px; background: var(--surface); padding: 10px 14px; text-align: center; display: grid; gap: 2px; }
+.fnode { --c: var(--line); flex: 1 1 0; min-width: 124px; max-width: 250px; border: 1px solid var(--line); border-top: 3px solid var(--c); border-radius: 12px; background: var(--surface); padding: 10px 14px; text-align: center; display: grid; gap: 2px; }
 .fnode b { font-weight: 600; font-size: 0.95rem; line-height: 1.35; }
 .fnode span { font-size: 0.8rem; color: var(--muted); line-height: 1.4; }
 .t-accent { --c: var(--accent); } .t-pass { --c: var(--pass); } .t-wip { --c: var(--wip); } .t-risk { --c: var(--risk); }

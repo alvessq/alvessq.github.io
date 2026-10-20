@@ -12,7 +12,7 @@ export default [
     flowIntro: 'Os mesmos testes rodam no computador e na nuvem. Nos dois, primeiro os serviços por trás do app são conferidos um a um; depois o teste segue a ordem em que o cliente usa o app:',
     flow: [
       [['No computador', 'monitor local, cada teste no seu intervalo'], ['Na nuvem', 'GitHub Actions, disparado pelo painel']],
-      [['Login com senha', 'serviço ok?', 'accent'], ['Login com código', 'serviço ok?', 'accent'], ['Propostas', 'serviço ok?', 'accent'], ['Ofertas', 'serviço ok?', 'accent'], ['Envio de SMS', 'serviço ok?', 'accent']],
+      [['Login com senha', 'serviço ok?', 'accent'], ['Envio de SMS', 'serviço ok?', 'accent'], ['Login com código', 'serviço ok?', 'accent'], ['Propostas', 'serviço ok?', 'accent'], ['Ofertas', 'serviço ok?', 'accent']],
       [['Login com senha'], ['Login com código por SMS']],
       [['Simulação com ofertas'], ['Escolher e editar a oferta']],
       [['Contratação', 'só roda com confirmação manual', 'wip']],
