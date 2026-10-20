@@ -75,10 +75,12 @@ section { padding-block: 88px; }
   display: grid; place-items: center; text-align: center; color: var(--muted); font-size: 0.85rem; }
 .photo b { display: block; font-size: 3rem; font-weight: 600; color: var(--accent); letter-spacing: -0.04em; }
 img.photo { display: block; height: auto; aspect-ratio: 1; max-width: 300px; border-radius: 50%; border: 0; background: transparent; box-shadow: 0 0 0 6px var(--surface), 0 0 0 7px var(--line); margin-block: 8px; }
-.summary { max-width: 380px; width: 100%; justify-self: center; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); padding: 16px 18px; display: grid; gap: 8px; font-size: 0.92rem; }
+.summary { max-width: 400px; width: 100%; justify-self: center; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); padding: 16px 18px; display: grid; gap: 8px; font-size: 0.92rem; }
 .summary li { display: flex; gap: 10px; }
 .summary li::before { content: "✓"; color: var(--pass); font-weight: 600; }
-.summary ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.summary ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.summary li span { color: var(--muted); line-height: 1.5; }
+.summary li b { color: var(--ink); font-weight: 600; }
 .summary p { font-size: 0.8rem; color: var(--muted); }
 
 .facts { list-style: none; margin: 56px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
