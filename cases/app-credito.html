@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Testes automáticos de um app de crédito · Kevin Quirino</title>
-<meta name="description" content="Criei os testes automáticos do aplicativo de crédito para pessoas, cobrindo as jornadas que o cliente mais usa.">
+<meta name="description" content="Criei os testes automáticos do aplicativo de crédito para pessoas, cobrindo as jornadas que o cliente mais usa. Os mesmos testes rodam no computador, com agenda própria, e na nuvem, pelo GitHub.">
 <link rel="canonical" href="https://alvessq.github.io/cases/app-credito.html">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:url" content="https://alvessq.github.io/cases/app-credito.html">
 <meta property="og:title" content="Testes automáticos de um app de crédito">
-<meta property="og:description" content="Criei os testes automáticos do aplicativo de crédito para pessoas, cobrindo as jornadas que o cliente mais usa.">
+<meta property="og:description" content="Criei os testes automáticos do aplicativo de crédito para pessoas, cobrindo as jornadas que o cliente mais usa. Os mesmos testes rodam no computador, com agenda própria, e na nuvem, pelo GitHub.">
 <meta property="og:image" content="https://alvessq.github.io/assets/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0A0D12">
@@ -34,7 +34,7 @@
   <div class="intro">
     <p class="kicker">Projeto de Qualidade · Trabalho</p>
     <h1>Testes automáticos de um app de crédito</h1>
-    <p class="lede">Criei os testes automáticos do aplicativo de crédito para pessoas, cobrindo as jornadas que o cliente mais usa.</p>
+    <p class="lede">Criei os testes automáticos do aplicativo de crédito para pessoas, cobrindo as jornadas que o cliente mais usa. Os mesmos testes rodam no computador, com agenda própria, e na nuvem, pelo GitHub.</p>
     <dl class="facts">
       <div><dt>Onde</dt><dd>Teddy Open Finance</dd></div>
       <div><dt>Meu papel</dt><dd>Propus e construí</dd></div>
@@ -55,10 +55,10 @@
     <section id="numeros">
       <h2>Em números</h2>
       <ul class="stats">
-        <li><b>5</b><span>jornadas do cliente automatizadas</span></li>
-        <li><b>9</b><span>telas do app mapeadas para os testes</span></li>
+        <li><b>5</b><span>jornadas do cliente automatizadas, do login à contratação</span></li>
+        <li><b>5</b><span>serviços por trás do app conferidos um a um (health checks)</span></li>
+        <li><b>2</b><span>lugares para rodar os mesmos testes: computador e nuvem (GitHub)</span></li>
         <li><b>100%</b><span>dos elementos com id encontrados pelo id, não pelo texto</span></li>
-        <li><b>5 min</b><span>entre cada conferência dos 5 serviços por trás do app</span></li>
       </ul>
       <p class="fine">Números tirados da configuração, do código e dos registros de execução do projeto. Nenhum dado de cliente ou de negócio.</p>
     </section>
@@ -73,8 +73,9 @@
 
     <section id="como-funciona">
       <h2>Como funciona</h2>
-      <p>Primeiro os serviços por trás do app são conferidos um a um. Depois o teste segue a ordem em que o cliente usa o app:</p>
-      <div class="flow" role="img" aria-label="Diagrama: Login com senha e Login com código e Propostas e Ofertas e Envio de SMS, depois Login com senha e Login com código por SMS, depois Simulação com ofertas e Escolher e editar a oferta, depois Contratação, depois Vídeo e registros">
+      <p>Os mesmos testes rodam no computador e na nuvem. Nos dois, primeiro os serviços por trás do app são conferidos um a um; depois o teste segue a ordem em que o cliente usa o app:</p>
+      <div class="flow" role="img" aria-label="Diagrama: No computador e Na nuvem, depois Login com senha e Login com código e Propostas e Ofertas e Envio de SMS, depois Login com senha e Login com código por SMS, depois Simulação com ofertas e Escolher e editar a oferta, depois Contratação, depois Vídeo e registros">
+        <div class="level multi"><div class="fnode"><b>No computador</b><span>monitor local, cada teste no seu intervalo</span></div><div class="fnode"><b>Na nuvem</b><span>GitHub Actions, disparado pelo painel</span></div></div>
         <div class="level multi"><div class="fnode t-accent"><b>Login com senha</b><span>serviço ok?</span></div><div class="fnode t-accent"><b>Login com código</b><span>serviço ok?</span></div><div class="fnode t-accent"><b>Propostas</b><span>serviço ok?</span></div><div class="fnode t-accent"><b>Ofertas</b><span>serviço ok?</span></div><div class="fnode t-accent"><b>Envio de SMS</b><span>serviço ok?</span></div></div>
         <div class="level multi"><div class="fnode"><b>Login com senha</b></div><div class="fnode"><b>Login com código por SMS</b></div></div>
         <div class="level multi"><div class="fnode"><b>Simulação com ofertas</b></div><div class="fnode"><b>Escolher e editar a oferta</b></div></div>
@@ -87,6 +88,7 @@
       <h2>O que eu fiz</h2>
       <ul class="did">
         <li><b>Automatizei as jornadas principais</b><span>Login com senha e com código por SMS, simulação, escolha e edição de ofertas e contratação.</span></li>
+        <li><b>Rodei no computador e na nuvem</b><span>No computador, um monitor roda cada teste no seu intervalo durante o expediente. Na nuvem, os mesmos testes rodam num emulador do GitHub, disparados pelo painel. O código é um só para os dois.</span></li>
         <li><b>Achei os elementos pelo id</b><span>O teste encontra botões e campos pelo identificador do elemento, que não muda quando o texto da tela muda. Texto só em avisos que não tinham id e nos diálogos do próprio Android.</span></li>
         <li><b>Separei em dois níveis</b><span>Um teste rápido confere o essencial. O completo passa pela simulação e pelas ofertas.</span></li>
         <li><b>Protegi a contratação</b><span>O teste que contrata só roda com confirmação de uma pessoa, para não gerar contratos sem querer.</span></li>
@@ -99,7 +101,7 @@
       <h2>Antes e depois</h2>
       <div class="compare">
         <div class="col"><h3>Antes</h3><ul><li>Testes do app feitos à mão a cada versão</li><li>Mesmos passos repetidos por uma pessoa</li><li>Pouca evidência quando algo dava errado</li></ul></div>
-        <div class="col after"><h3>Depois</h3><ul><li>Jornadas principais conferidas sozinhas</li><li>Teste rápido e completo, para cada momento</li><li>Vídeo e registros de cada execução</li></ul></div>
+        <div class="col after"><h3>Depois</h3><ul><li>Jornadas principais conferidas sem repetir os passos à mão</li><li>Os mesmos testes no computador e na nuvem</li><li>Teste rápido e completo, para cada momento</li><li>Vídeo e registros de cada execução</li></ul></div>
       </div>
     </section>
 

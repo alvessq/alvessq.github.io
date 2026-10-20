@@ -3,14 +3,15 @@
 export default [
   {
     id: 'app-credito', kind: 'Qualidade', title: 'Testes automáticos de um app de crédito', stText: 'Trabalho · dados protegidos',
-    sum: 'Criei os testes automáticos do aplicativo de crédito para pessoas, cobrindo as jornadas que o cliente mais usa.',
-    card: [['5', 'jornadas automatizadas'], ['9', 'telas mapeadas']],
+    sum: 'Criei os testes automáticos do aplicativo de crédito para pessoas, cobrindo as jornadas que o cliente mais usa. Os mesmos testes rodam no computador, com agenda própria, e na nuvem, pelo GitHub.',
+    card: [['5', 'jornadas automatizadas'], ['2', 'lugares para rodar: computador e nuvem']],
     role: 'Propus e construí', when: '2025–2026', tools: ['Appium', 'WebdriverIO', 'TypeScript'],
-    stats: [['5', 'jornadas do cliente automatizadas'], ['9', 'telas do app mapeadas para os testes'], ['100%', 'dos elementos com id encontrados pelo id, não pelo texto'], ['5 min', 'entre cada conferência dos 5 serviços por trás do app']],
+    stats: [['5', 'jornadas do cliente automatizadas, do login à contratação'], ['5', 'serviços por trás do app conferidos um a um (health checks)'], ['2', 'lugares para rodar os mesmos testes: computador e nuvem (GitHub)'], ['100%', 'dos elementos com id encontrados pelo id, não pelo texto']],
     context: ['Um aplicativo de crédito para pessoas, em que os testes do aplicativo eram feitos à mão antes de cada versão.', 'Cada nova versão exigia alguém repetindo os mesmos passos: entrar no app, simular, escolher uma oferta e seguir até a contratação.'],
     challenge: 'Testar login, simulação e contratação sem depender de alguém repetindo os mesmos passos a cada entrega, e sem gerar contratos sem querer.',
-    flowIntro: 'Primeiro os serviços por trás do app são conferidos um a um. Depois o teste segue a ordem em que o cliente usa o app:',
+    flowIntro: 'Os mesmos testes rodam no computador e na nuvem. Nos dois, primeiro os serviços por trás do app são conferidos um a um; depois o teste segue a ordem em que o cliente usa o app:',
     flow: [
+      [['No computador', 'monitor local, cada teste no seu intervalo'], ['Na nuvem', 'GitHub Actions, disparado pelo painel']],
       [['Login com senha', 'serviço ok?', 'accent'], ['Login com código', 'serviço ok?', 'accent'], ['Propostas', 'serviço ok?', 'accent'], ['Ofertas', 'serviço ok?', 'accent'], ['Envio de SMS', 'serviço ok?', 'accent']],
       [['Login com senha'], ['Login com código por SMS']],
       [['Simulação com ofertas'], ['Escolher e editar a oferta']],
@@ -19,6 +20,7 @@ export default [
     ],
     did: [
       ['Automatizei as jornadas principais', 'Login com senha e com código por SMS, simulação, escolha e edição de ofertas e contratação.'],
+      ['Rodei no computador e na nuvem', 'No computador, um monitor roda cada teste no seu intervalo durante o expediente. Na nuvem, os mesmos testes rodam num emulador do GitHub, disparados pelo painel. O código é um só para os dois.'],
       ['Achei os elementos pelo id', 'O teste encontra botões e campos pelo identificador do elemento, que não muda quando o texto da tela muda. Texto só em avisos que não tinham id e nos diálogos do próprio Android.'],
       ['Separei em dois níveis', 'Um teste rápido confere o essencial. O completo passa pela simulação e pelas ofertas.'],
       ['Protegi a contratação', 'O teste que contrata só roda com confirmação de uma pessoa, para não gerar contratos sem querer.'],
@@ -26,7 +28,7 @@ export default [
       ['Guardei evidências', 'Cada execução grava vídeo e registros, para qualquer pessoa ver o que aconteceu.']
     ],
     before: ['Testes do app feitos à mão a cada versão', 'Mesmos passos repetidos por uma pessoa', 'Pouca evidência quando algo dava errado'],
-    after: ['Jornadas principais conferidas sozinhas', 'Teste rápido e completo, para cada momento', 'Vídeo e registros de cada execução'],
+    after: ['Jornadas principais conferidas sem repetir os passos à mão', 'Os mesmos testes no computador e na nuvem', 'Teste rápido e completo, para cada momento', 'Vídeo e registros de cada execução'],
     learn: 'Conferir os serviços antes de abrir o app evita culpar a tela por um problema que está nos bastidores. E achar os elementos pelo id, e não pelo texto, fez os testes sobreviverem a mudanças de texto nas telas.',
     evidence: ['A mesma abordagem, com localizadores por id, está no meu projeto público de testes de um app de compras.', 'https://github.com/alvessq/qa-automation-portfolio/tree/main/apps/mobile-e2e']
   },
