@@ -55,10 +55,10 @@
     <section id="numeros">
       <h2>Em números</h2>
       <ul class="stats">
-        <li><b>4x</b><span>por dia roda o teste rápido</span></li>
-        <li><b>1x</b><span>por noite roda o teste completo</span></li>
-        <li><b>14 dias</b><span>de vídeos, prints e registros guardados</span></li>
-        <li><b>3</b><span>execuções entre cada reinício do emulador no computador</span></li>
+        <li><b>5</b><span>testes do app que rodam na nuvem, um a um ou em suíte</span></li>
+        <li><b>4</b><span>modos de execução: smoke, health, regressão e teste avulso</span></li>
+        <li><b>14 dias</b><span>de vídeo, prints e registros de cada execução guardados</span></li>
+        <li><b>Android 14</b><span>emulador na nuvem, sem depender do computador de ninguém</span></li>
       </ul>
       <p class="fine">Números tirados da configuração, do código e dos registros de execução do projeto. Nenhum dado de cliente ou de negócio.</p>
     </section>
@@ -75,10 +75,10 @@
       <h2>Como funciona</h2>
       <p>Do horário agendado até o resultado no painel:</p>
       <div class="flow" role="img" aria-label="Diagrama: Agenda, depois Baixa a versão mais nova do app, depois Emulador Android na nuvem e Modo local que imita a nuvem, depois Roda os testes, depois Vídeo, prints e registros e Painel do time">
-        <div class="level"><div class="fnode t-accent"><b>Agenda</b><span>rápido a cada 6 horas · completo 1x por noite</span></div></div>
+        <div class="level"><div class="fnode t-accent"><b>Agenda</b><span>smoke a cada 6 horas · regressão de madrugada</span></div></div>
         <div class="level"><div class="fnode"><b>Baixa a versão mais nova do app</b></div></div>
         <div class="level multi"><div class="fnode"><b>Emulador Android na nuvem</b><span>Android 14</span></div><div class="fnode"><b>Modo local que imita a nuvem</b><span>para investigar sem custo</span></div></div>
-        <div class="level"><div class="fnode"><b>Roda os testes</b><span>com vídeo gravado pelo próprio projeto</span></div></div>
+        <div class="level"><div class="fnode"><b>Roda os testes</b><span>com vídeo montado a partir de prints a cada 10 s</span></div></div>
         <div class="level multi"><div class="fnode t-pass"><b>Vídeo, prints e registros</b><span>guardados por 14 dias</span></div><div class="fnode t-pass"><b>Painel do time</b><span>mostra o resultado</span></div></div>
       </div>
     </section>
@@ -92,7 +92,7 @@
         <li><b>Automatizei a versão do app</b><span>A versão mais nova é baixada sozinha antes de cada rodada.</span></li>
         <li><b>Preparei o computador sozinho</b><span>Ao abrir o painel, a versão mais nova do app é baixada e, se nenhum emulador estiver ligado, um é aberto em segundo plano, sem atrasar o painel.</span></li>
         <li><b>Reiniciei o emulador de tempos em tempos</b><span>No computador, o emulador é reiniciado a cada 3 execuções, sem apagar os dados, para não travar em sessões longas.</span></li>
-        <li><b>Gravei o vídeo por conta própria</b><span>A gravação não depende do Appium. No computador ficam só os 3 vídeos mais recentes; na nuvem, cada execução guarda vídeo, prints e registros por 14 dias.</span></li>
+        <li><b>Montei o vídeo por conta própria</b><span>Na nuvem, a gravação do Appium podia travar quando o emulador caía. Passei a montar o vídeo com prints da tela a cada 10 segundos, e cada execução guarda vídeo, prints e registros por 14 dias. No computador, a tela é gravada direto e ficam os 3 vídeos mais recentes.</span></li>
       </ul>
     </section>
 

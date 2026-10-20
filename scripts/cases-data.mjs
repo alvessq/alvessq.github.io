@@ -33,17 +33,17 @@ export default [
   {
     id: 'nuvem', kind: 'Qualidade', title: 'Testes do aplicativo rodando sozinhos na nuvem', stText: 'Trabalho · dados protegidos',
     sum: 'Fiz os testes do app rodarem num emulador Android (um celular simulado) na nuvem, em horários agendados, sem ninguém precisar apertar um botão.',
-    card: [['4x', 'por dia, o teste rápido'], ['14 dias', 'de vídeos guardados']],
+    card: [['5', 'testes do app rodando na nuvem'], ['14 dias', 'de vídeos e registros guardados']],
     role: 'Construí', when: '2025–2026', tools: ['GitHub Actions', 'Emulador Android', 'Appium'],
-    stats: [['4x', 'por dia roda o teste rápido'], ['1x', 'por noite roda o teste completo'], ['14 dias', 'de vídeos, prints e registros guardados'], ['3', 'execuções entre cada reinício do emulador no computador']],
+    stats: [['5', 'testes do app que rodam na nuvem, um a um ou em suíte'], ['4', 'modos de execução: smoke, health, regressão e teste avulso'], ['14 dias', 'de vídeo, prints e registros de cada execução guardados'], ['Android 14', 'emulador na nuvem, sem depender do computador de ninguém']],
     context: ['Os testes funcionavam no meu computador, mas o emulador da nuvem travava ao abrir o app.', 'Sem a nuvem, os testes só rodavam quando alguém lembrava de rodar.'],
     challenge: 'Descobrir por que o mesmo teste passava na minha máquina e falhava na nuvem, sem gastar horas de execução tentando no escuro.',
     flowIntro: 'Do horário agendado até o resultado no painel:',
     flow: [
-      [['Agenda', 'rápido a cada 6 horas · completo 1x por noite', 'accent']],
+      [['Agenda', 'smoke a cada 6 horas · regressão de madrugada', 'accent']],
       [['Baixa a versão mais nova do app']],
       [['Emulador Android na nuvem', 'Android 14'], ['Modo local que imita a nuvem', 'para investigar sem custo']],
-      [['Roda os testes', 'com vídeo gravado pelo próprio projeto']],
+      [['Roda os testes', 'com vídeo montado a partir de prints a cada 10 s']],
       [['Vídeo, prints e registros', 'guardados por 14 dias', 'pass'], ['Painel do time', 'mostra o resultado', 'pass']]
     ],
     did: [
@@ -53,7 +53,7 @@ export default [
       ['Automatizei a versão do app', 'A versão mais nova é baixada sozinha antes de cada rodada.'],
       ['Preparei o computador sozinho', 'Ao abrir o painel, a versão mais nova do app é baixada e, se nenhum emulador estiver ligado, um é aberto em segundo plano, sem atrasar o painel.'],
       ['Reiniciei o emulador de tempos em tempos', 'No computador, o emulador é reiniciado a cada 3 execuções, sem apagar os dados, para não travar em sessões longas.'],
-      ['Gravei o vídeo por conta própria', 'A gravação não depende do Appium. No computador ficam só os 3 vídeos mais recentes; na nuvem, cada execução guarda vídeo, prints e registros por 14 dias.']
+      ['Montei o vídeo por conta própria', 'Na nuvem, a gravação do Appium podia travar quando o emulador caía. Passei a montar o vídeo com prints da tela a cada 10 segundos, e cada execução guarda vídeo, prints e registros por 14 dias. No computador, a tela é gravada direto e ficam os 3 vídeos mais recentes.']
     ],
     before: ['Testes rodavam só quando alguém lembrava', 'O emulador travava na nuvem', 'Investigar custava horas de execução', 'Preparar o computador era manual'],
     after: ['Rodam sozinhos em horários fixos', 'Emulador estável', 'Problema investigado no meu computador', 'App e emulador prontos ao abrir o painel'],
