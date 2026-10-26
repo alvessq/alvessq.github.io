@@ -145,7 +145,7 @@ export default [
     evidence: ['No meu projeto público, uma loja de demonstração tem 5 conferências separadas a cada 5 minutos, das 8h às 18h, no mesmo formato.', 'https://github.com/alvessq/qa-automation-portfolio/blob/main/apps/web-e2e/scripts/health.mjs']
   },
   {
-    id: 'po-auditoria', kind: 'Produto', title: 'Product Owner do sistema de auditoria', stText: 'Trabalho · dados protegidos',
+    id: 'po-auditoria', kind: 'Produto', fine: 'Descrito sem dados, nomes ou regras internas da empresa.', title: 'Product Owner do sistema de auditoria', stText: 'Trabalho · dados protegidos',
     sum: 'Fui a referência de regra de negócio do sistema de auditoria e atuei por um período como Product Owner do produto.',
     card: [['PO', 'por um período'], ['Referência', 'em regra de negócio']],
     role: 'Product Owner por um período', when: '2025–2026', tools: ['Discovery', 'Refinamento', 'Critérios de aceite', 'Jira'],
@@ -173,7 +173,7 @@ export default [
     evidence: null
   },
   {
-    id: 'proposta', kind: 'Produto', title: 'Como propus a automação de testes do aplicativo', stText: 'Trabalho · dados protegidos',
+    id: 'proposta', kind: 'Produto', fine: 'Descrito sem dados, nomes ou regras internas da empresa.', title: 'Como propus a automação de testes do aplicativo', stText: 'Trabalho · dados protegidos',
     sum: 'Como mostrei o valor de automatizar os testes do aplicativo antes de pedir tempo ao time.',
     card: [['Do zero', 'até a primeira versão'], ['3', 'projetos que vieram depois']],
     role: 'Propus e construí', when: '2025–2026', tools: ['Visão de produto', 'Prova de conceito (PoC)', 'Appium'],

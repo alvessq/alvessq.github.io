@@ -126,7 +126,7 @@ function casePage(c, i) {
       <ul class="stats">
         ${c.stats.map(([n, l]) => `<li><b>${esc(n)}</b><span>${esc(l)}</span></li>`).join('\n        ')}
       </ul>
-      <p class="fine">Números tirados da configuração, do código e dos registros de execução do projeto. Nenhum dado de cliente ou de negócio.</p>
+      <p class="fine">${esc(c.fine ?? 'Números tirados da configuração, do código e dos registros de execução do projeto. Nenhum dado de cliente ou de negócio.')}</p>
     </section>
 
     <section id="contexto">
